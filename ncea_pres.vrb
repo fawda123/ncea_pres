@@ -1,0 +1,12 @@
+\frametitle{SWMPr applications}
+Two online applications can help visualize trends \\~\\
+\begin{columns}[t]
+\begin{column}{0.45\textwidth}
+\centerline{\emtxt{\href{https://beckmw.shinyapps.io/swmp_summary}{Summary plots}}}
+\centerline{\fbox{\includegraphics[width = 0.9\textwidth]{fig/swmp_summary.png}}}
+\end{column}
+\begin{column}{0.45\textwidth}
+\centerline{\emtxt{\href{https://beckmw.shinyapps.io/swmp_comp}{Trends map}}}
+\centerline{\fbox{\includegraphics[width = 0.935\textwidth]{fig/swmp_comp.png}}}
+\end{column}
+\end{columns}

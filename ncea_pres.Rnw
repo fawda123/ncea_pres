@@ -16,10 +16,29 @@
 
 \setbeamertemplate{navigation symbols}{}
 
-%tikz objects
-\tikzstyle{decision} = [diamond, draw, text width=6em, text badly centered, inner sep=2pt, top color=white, bottom color=zissou3]
-\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, rounded corners, minimum height=3em, minimum width=8em, top color = white, bottom color=zissou3]
-\tikzstyle{declare} = [rectangle, draw, text width=10em, text centered, minimum height=3em, minimum width=8em, top color = white, bottom color=zissou3]
+% custom colors
+<<mypal, echo = F, results = 'asis', cache = T>>=
+pal <- function(x) RColorBrewer::brewer.pal(x, 'GnBu')
+num_col <- 5
+
+for(i in 1:num_col){
+ 
+  col.nm <- paste0('mypal',i)
+  hexa <- paste0(gsub('#', '', pal(5)[i]))
+  cat(paste0('\\definecolor{', col.nm,'}{HTML}{',hexa,'}'))
+  
+}
+
+bg_col <- pal(num_col)[1]
+
+pdf('fig/back_tmp.pdf',bg = bg_col)
+frame()
+invisible(dev.off())
+@
+
+\tikzstyle{decision} = [diamond, draw, text width=6em, text badly centered, inner sep = 2pt, top color=white, bottom color=mypal3, drop shadow]
+\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, rounded corners, minimum height=3em, minimum width=8em, top color = white, bottom color=mypal4,  drop shadow]
+\tikzstyle{declare} = [rectangle, draw, text width=10em, text centered, minimum height=3em, minimum width=8em, top color = white, bottom color=mypal5,  drop shadow]
 
 % knitr setup
 <<setup, include = F, cache = F>>=
@@ -41,6 +60,9 @@ library(gridExtra)
 library(maptools)
 library(raster)
 library(Hmisc)
+library(car)
+library(RColorBrewer)
+library(SWMPr)
 @
 
 % get online bib file
@@ -48,26 +70,6 @@ library(Hmisc)
 refs <- httr::GET('https://raw.githubusercontent.com/fawda123/refs/master/refs.bib')
 refs <- rawToChar(refs$content)
 writeLines(refs, con = file('refs.bib'))
-@
-
-% custom colors
-<<zissou, echo = F, results = 'asis', cache = T>>=
-pal <- function(x) RColorBrewer::brewer.pal(x, 'GnBu')
-num_col <- 5
-
-for(i in 1:num_col){
- 
-  col.nm <- paste0('mypal',i)
-  hexa <- paste0(gsub('#', '', pal(5)[i]))
-  cat(paste0('\\definecolor{', col.nm,'}{HTML}{',hexa,'}'))
-  
-}
-
-bg_col <- pal(num_col)[1]
-
-pdf('fig/back_tmp.pdf',bg = bg_col)
-frame()
-invisible(dev.off())
 @
 
 % my custom ggplot theme
@@ -138,11 +140,11 @@ p1 <- ggplot(to.plo, aes(x = sal.grid, y = bt.md, group = dec.time,
   scale_x_continuous(name=expression(italic(Sal[ff]))) +
   theme_mine() +
   theme(legend.position = 'bottom') +
-  scale_colour_gradientn('Year', colours = pal(5))
+  scale_colour_gradientn('Year', colours = pal(5)[c(2:5)])
 
 pdf('fig/title_plo.pdf', width = 12, height =3.5, family = 'serif')
 print(p1)
-dev.off()
+invisible(dev.off())
 @
 
 \setbeamercolor{title}{fg=mypal5} % main title
@@ -151,14 +153,17 @@ dev.off()
 \setbeamercolor{normal text}{fg=mypal5}
 \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{fig/back_tmp.pdf}}
 
+% macros
+\newcommand{\emtxt}[1]{\textbf{\textit{#1}}}
+
 \begin{document}
 
-\title[Evaluating water quality]{\textbf{The search for truth in numbers: Quantitative approaches for evaluating trends in water quality data}}
+\title[Evaluating water quality]{\textbf{Quantitative approaches to evaluate surface water quality: Examples from Minnesota Lakes to Florida Estuaries}}
 \author[M. Beck]{Marcus W. Beck}
 
 \institute[USEPA]{ORISE post-doc, USEPA National Health and Environmental Effects Research Laboratory, Gulf Ecology Division, \href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov}, Phone: 8509342480}
 
-\date{Oct. 24, 2014}
+\date{Sep. 22, 2015}
 
 \titlegraphic{\includegraphics[width=0.95\linewidth]{fig/title_plo.pdf}}
 
@@ -170,11 +175,42 @@ dev.off()
 \section{Background}
 
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\begin{frame}{\textbf{Assessing environmental condition}}{\textbf{How do we collect and use data?}}
+\onslide<+->
+The foundation of environmental management is a strong monitoring network \scriptsize \cite{NRC90}\\~\\
+\normalsize
+Monitoring provides information for decision-making based on apparent trends...
+\vspace{0.2in}
+\begin{center}
+\emtxt{What are the changes in environmental condition over time?}\\~\\
+\emtxt{Are these changes `good' or `bad' based on our management objectives?}\\~\\
+\emtxt{What may have caused these changes?}
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Assessing environmental condition}}{\textbf{How do we collect and use data?}}
+\emtxt{The good news}: We are getting better at monitoring - standardized, automated, increased coverage, real-time/continuous \\~\\
+\emtxt{The bad news}: Our ability to use these data for decision-making has not kept pace with availability! \\~\\
+<<theo, fig.height = 3.25, fig.width = 5, out.width = '0.55\\textwidth'>>=
+par(mar = c(4, 4, 0.5, 0.5), family = 'serif')
+x <- seq(1,100)
+y1 <- x^2
+y2 <- 4000 + 10*x
+plot(x, y1, type = 'l', xlab = 'Time', ylab = 'Relative quantities', axes = F, col = pal(5)[4], lty = 2, lwd = 2)
+lines(x, y2, col = pal(5)[4], lty = 1, lwd = 2)
+axis(side = 1, c(1, 100), labels = F)
+axis(side = 2, c(1, 100^2), labels = F)
+legend('topleft', lty = c(2,1), lwd = c(2,2), legend= c('Data', 'Analysis tools'), col = c(pal(5)[4], pal(5)[4]), bty = 'n')
+@
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Assessing environmental condition}}{\textbf{How do we collect and use data?}}
+Most of my research career has focused on using monitoring data to understand eutrophication in one form or another \\~\\
 \onslide<+->
 \begin{quote}
-Eutrophication (noun) - an \alert{increase} in the rate of supply of \alert{organic matter} to an ecosystem\\~\\
-\vspace{0.05in}
+Eutrophication (noun) - an \emtxt{increase} in the rate of supply of \emtxt{organic matter} to an ecosystem\\
 \hfill -- \cite{Nixon95}
 \end{quote}
 \begin{center}
@@ -194,272 +230,328 @@ Eutrophication (noun) - an \alert{increase} in the rate of supply of \alert{orga
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\begin{frame}{\textbf{Assessing environmental condition}}{\textbf{How do we collect and use data?}}
 \onslide<+->
-Human inputs can greatly accelarate eutrophication... particularly for coastal waters \\~\\
+Today's talk: My experience synthesizing and evaluating monitoring data to inform our understanding of the eutrophication paradigm\\~\\
 \begin{itemize}
-\onslide<+->
-\item Depletion of bottom water dissolved oxygen \cite{Diaz08}
-\onslide<+->
-\item Increase in frequency/severity of harmful algal blooms \cite{Glibert13}
-\onslide<+->
-\item Reduction or extirpation of seagrass communities \cite{Tomasko05}
-\onslide<+->
-\item Propogated effects to upper trophic levels \cite{Powers05}
-\end{itemize}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
-\centerline{\includegraphics[width = 0.95\textwidth]{fig/redtide.png}}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
-\onslide<+->
-Water Quality Act Amendments of 1972 \\~\\
-\begin{itemize}
-\item Federal mandates to \alert{protect and restore} the chemical, physical, and biological integrity of \alert{surface waters}
-\item Protection and restoration requires \alert{criteria} \\~\\
+\item \emtxt{Case 1}: Understanding biological response of aquatic plants in Minnesota lakes \\~\\
+\item \emtxt{Case 2}: Evaluating long-term datasets of chlorophyll in Tampa Bay \\~\\
+\item \emtxt{Case 3}: Development of `open-science' tools for the National Estuarine Research Reserve System \\~\\
 \end{itemize}
 \onslide<+->
-Numeric nutrient criteria \\~\\
-\begin{itemize}
-\item The amounts of contaminants or pollutants that may be present without impairing aquatic life or human health 
-\item E.g., nutrients limits for seagrass in Indian River Lagoon...
-\end{itemize}
+Each case addresses the challenges of \emtxt{understanding nutrient dynamics} and \emtxt{developing quantitative tools} for assessment
 \end{frame}
 
+\section{Case 1: Minnesota lakes}
+
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
-\onslide<+->
-Nutrient limits using seagrass depth-limit targets \tiny \cite{Steward07}\\~\\
-\begin{columns}[T]
-\begin{column}{0.45\textwidth}
-\centerline{\includegraphics[width = 0.9\textwidth]{fig/irl_map.png}}
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centerline{\includegraphics[width=\textwidth]{fig/mn_lake_inset.pdf}}
 \end{column}
-\begin{column}{0.45\textwidth}
-\centerline{\includegraphics[width = 0.92\textwidth]{fig/irl_reg.png}}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{fig/mn_seal.jpg} \\~\\
+\includegraphics[width=0.9\textwidth]{fig/mn_lake.jpg}
+\end{center}
 \end{column}
 \end{columns}
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
-\onslide<+->
-USEPA national strategy for the development of regional nutrient criteria\\~\\
-\begin{itemize}
-\item Aid states' ability to control and reduce nutrient enrichments \\~\\
-\item Responsibility of EPA to develop criteria guidance \\~\\
-\end{itemize}
-\scriptsize
-\hfill \cite{USEPA98}
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\centerline{\includegraphics[width=0.9\textwidth]{fig/stressors.pdf}}
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+Water Quality Act Amendments of 1972
+\begin{itemize}
+\item{Federal mandates to protect and restore the chemical, physical, and \emtxt{biological} integrity of surface waters}
+\item{Protection and restoration requires monitoring \\~\\}
+\end{itemize}
+\onslide<+->
+Index of biotic integrity (IBI) \cite{Karr81,Karr86}
+\begin{itemize}
+\item{Monitoring framework for definition and evaluation of biotic integrity}
+\item{Uses aquatic organisms as surrogates of ecosystem health}
+\item{A multimetric index that is regionally specific}
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+The macrophyte IBI can be used to evaluate relative lake condition by monitoring and evaluating aquatic plant metrics \cite{Beck10} \\~\\
+\onslide<+->
+Composed of eight metrics, summed to get one IBI score per lake \\~\\
+\begin{itemize}
+\item{MAXD: Maximum depth of plant growth}
+\item{LITT: Percentage of littoral zone vegetated}
+\item{OVER: Number of species with frequency occurrence $>$10\%}
+\item{EMFL: Relative frequency of emergent-floating species}
+\item{SUBM: Relative frequency of submersed species}
+\item{SENS: Relative frequency of sensitive species}
+\item{TOLR: Relative frequency of tolerant species}
+\item{TAXA: Number of native taxa \\~\\}
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{columns}
+\onslide<+->
+\begin{column}{0.5\textwidth}
+\begin{center}
+Related to changes in water quality \\~\\
+\includegraphics[width=\textwidth]{fig/Beck_GEDsem-ibi_tsi.pdf}
+\end{center}
+\end{column}
+\onslide<+->
+\begin{column}{0.5\textwidth}
+\begin{center}
+High precision given sampling effort \\~\\
+\includegraphics[width=\textwidth]{fig/Beck_GEDsem-ibi_eff.pdf}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->{How appropriate is the IBI for characterizing effects of multiple stressors? Will it work within an assessment/impairment framework?\\~\\}
+\onslide<+->{
+\vspace*{-0.1in}
+\begin{center}
+\scalebox{0.8}{
+\begin{tikzpicture}[node distance=2.5cm, auto, >=stealth]
+	\node[block] (a) {Assess waters};
+	\onslide<+->{
+	\node[decision] (b)  [below of=a] {Fulfill standards?};
+ 	\draw[->] (a) -- (b);}
+ 	\onslide<+->{
+ 	\node[declare] (c)  [below left of=b, node distance=4cm]  {Non-degradation};
+ 	\draw[->] (b) -- node[above left] {yes} (c);}
+ 	\onslide<+->{
+ 	\node[declare] (d)  [below right of=b, node distance=4cm]  {Impairment};
+ 	\draw[->] (b) -- node[above right] {no} (d);}
+ 	\onslide<+>{
+ 	\node[block] (e)  [right of=b, node distance=6cm]    {Remediate};
+ 	\draw[->] (d.east) to [out=360,in=270] (e.south);
+ 	\draw[->] (e.north) to [out=90,in=360] (a.east);}
+ 	\onslide<+->{
+ 	\node[block] (f)  [below of=e, node distance=1cm]    {Stressor ID};
+ 	\node[block] (g)  [above of=e, node distance=1cm]    {Remediate};
+	\draw[->] (d.east) to [out=360,in=270] (f.south);
+	\draw[->] (f.north) to [out=90,in=270] (g.south);
+ 	\draw[->] (g.north) to [out=90,in=360] (a.east);}
+\end{tikzpicture}}
+\end{center}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+Consider an IBI with 12 metrics, each scored 1, 3, or 5\\~\\
+How many different combinations of metrics lead to the same score?
+\onslide<+->
+<<ibi_comb, echo=F, fig.width=6.5, fig.height=3, width = '\\textwidth'>>=
+combn.dat <- expand.grid(rep(list(c(1,3,5)),12))
+tab.vals <- table(rowSums(combn.dat))
+tab.vals <- data.frame(tab.vals)
+
+p1<-ggplot(tab.vals,aes(x=factor(Var1), y=Freq, fill=Freq)) +
+  geom_bar(stat="identity") +
+  theme_mine() +
+  scale_fill_gradientn(colours = pal(5)[3:5]) +
+  theme(
+    axis.title.x=element_text(vjust=0,size=15),
+    axis.title.y=element_text(vjust=0.25,size=15,angle=90),
+  	legend.position='none') +
+	scale_x_discrete('IBI score') +
+	scale_y_continuous('No. of combinations')
+
+print(p1) 
+@
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+\textbf{\emph{Develop and implement a framework for evaluating the macrophyte IBI to inform its use in biological monitoring:}} \\~\\
+\begin{enumerate}
+\onslide<+->
+\item How well does the index distinguish between signal and noise? \\~\\
+\onslide<+->
+\item Can information on stressors and their effects be quantified with certainty? \\~\\
+\onslide<+->
+\item What stressors primarily influence index response? \\~\\
+\onslide<+->
+\item How appropriate is a multimetric index for characterizing effects of multiple stressors?
+\end{enumerate}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{itemize}
+\item Dataset of 332 vegetation surveys, courtesy of MNDNR
+\item Numerous covariates describing lake characteristics and anthropogenic stressors
+\end{itemize}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centerline{\includegraphics[width=\textwidth]{fig/Beck_GEDsem-ibi_data.pdf}}
+\end{column}
+\begin{column}{0.5\textwidth}
+\scriptsize
+\begin{itemize}
+\item{lake surface area}
+\item{maximum lake depth}
+\item{trophic state index}
+\item{growing degree days}
+\item{percent agriculture in wshed}
+\item{percent impervious surfaces in wshed}
+\item{density of groundwater wells in wshed}
+\item{wshed area to lake area}
+\item{crop productivity index of wshed}
+\item{dock density}
+\item{...}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+Ecological and numerical complexity warrants the use of creative solutions\\~\\
+Neural networks to model IBI response\\~\\
+\begin{itemize}
+\onslide<+->
+\item{Essentially a large, non-linear regression model free of assumptions that can handle multivariate response}
+\onslide<+->
+\item{Models relationships among variables using a network that mimics neuronal structure of the human brain}
+\onslide<+->
+\item{`Supervised' neural networks are meant for prediction but network information can be used to infer causation}
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{center}
+\animategraphics[controls, width =.65\linewidth]{12}{fig/Rplot}{}{} %frame rate is 12 per/sec
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{center}
+\animategraphics[controls,width=0.85\linewidth]{12}{fig/train_iter}{}{}
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+Modification of Garson's algorithm to determine relative importance of variables \cite{Garson91}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics<1->[width=\textwidth,page=2]{fig/Beck_GEDsem-nnet_relimp1.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics<1>[width=\textwidth,page=11]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<2>[width=\textwidth,page=12]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<3>[width=\textwidth,page=13]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<4>[width=\textwidth,page=14]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<5>[width=\textwidth,page=15]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<6>[width=\textwidth,page=16]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<7>[width=\textwidth,page=17]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<8>[width=\textwidth,page=18]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<9>[width=\textwidth,page=19]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<10->[width=\textwidth,page=20]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\end{center}
+\end{column}
+\end{columns}
+\onslide<11>
+Relative importance is summation of product of weights between layers
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{center}
+\begin{figure}[p]
+\subfloat[IBI scores]{
+\includegraphics[width=0.5\textwidth,keepaspectratio=T,page=1]{fig/Beck_GEDsem-gar_exp_met.pdf}
+}
+\subfloat[MAXD metric]{
+\includegraphics[width=0.5\textwidth,keepaspectratio=T,page=2]{fig/Beck_GEDsem-gar_exp_met.pdf}
+}
+\vspace{0.1in}
+\caption{Examples of relative importance of explanatory variables based on weights between layers in optimal neural networks.}  
+\end{figure}
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+Neural networks are powerful enough to model noise in the data \\~\\
+The model may be specific to peculiarities the training dataset \\~\\
+Uncertainty of variable importance must be quantified - bootstrap! 
+\onslide<+->
+\begin{center}
+\begin{figure}[t]
+\subfloat{
+\includegraphics[width=0.5\textwidth,keepaspectratio=T,page=1]{fig/Beck_GEDsem-gar_boot.pdf}
+}
+\subfloat{
+\includegraphics[width=0.5\textwidth,keepaspectratio=T,page=2]{fig/Beck_GEDsem-gar_boot.pdf}
+}
+\end{figure} %TAXA
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+Lots of uncertainty associated with input contributions... \\~\\
+\begin{itemize}
+\item One of ten relationships for IBI scores with explanatory variables
+\item Four of 80 relationships for metrics with explanatory variables
+\pause
+\item IBI negatively related to lake trophic state
+\item MAXD, OVER, and TAXA negatively related to lake trophic state
+\item TAXA positively related to lake size\\~\\
+\end{itemize}
+\pause
+What is the source of this uncertainty? Sample sizes, method, neural network?
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+Potentially competing objectives of an IBI: certainty vs simplicity \\~\\
+\pause
+\begin{quote}
+IBI relies on multiparameters, a requirement when the system to be evaluated is complex. \cite{Karr86} \\~\\
+\end{quote}
+\begin{quote}
+The resulting index allows people without specialized expertise to understand overall condition and to make informed decisions that will then affect the health of those resources. \cite{Karr99} \\~\\
+\end{quote}
+\pause
+\begin{quote}
+Combining responses into an index hides the component responses, thereby obscuring causation. \cite{Suter93}
+\end{quote}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 USEPA Gulf Ecology Division - guidance to Florida DEP and others on criteria development for estuaries \\~\\
 \centerline{\includegraphics[width = 0.8\textwidth]{fig/sabine.png}}
 \end{frame}
 
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\onslide<+->
-There are challenges to providing guidance...\\~\\
-\alert{Challenge 1:} We don't fully understand eutrophication processes \\~\\
-\begin{quote}
-There are good reasons to believe that eutrophication will, in the near \alert{future}, become a \alert{hazard in marine coastal areas} in many parts of the world.\\~\\
-\vspace{0.05in}
-\hfill -- \cite{Rosenberg85} \\~\\
-\end{quote}
-\end{frame}
-
-%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\onslide<+->
-Our conceptual model for understanding the effects of nutrient pollution is adopted from freshwater sciences. \\~\\
-\begin{center}
-\scalebox{1}{
-\begin{tikzpicture}[node distance = 4cm, auto, >=stealth]
-  \node[block] (a) {Nutrient Loading};
-	\node[decision] (b)  [right of=a] {Responses};
- 	\draw[->] (a) -- (b);
-  \draw[decorate,decoration={brace,amplitude=10pt}] [right of=b] (2,-1.5) -- (2,1.5);
-  \node[draw,align=left,draw=none] [right of=b] {\textbf{Changes in:}\\ Chlorophyll\\ Primary Production\\ System Metabolism\\ Dissolved Oxygen};
-\end{tikzpicture}}
-\end{center}
-\vspace{-0.5cm}\hspace*{15pt}\scalebox{0.7}{\hbox{\tiny Adapted from \cite{Cloern01}}}\\~\\
-\end{frame}
-
-<<ggch,results = 'hide', echo = F>>=
-###
-#import data
-
-#get tampa bay station meta data, all stations
-#created in 'tampa_dat.R'
-#converted to spatial dataframe
-tb.sta<-readShapeSpatial('data/tb_sta.shp')
-
-#shapefile for state
-state<-readShapeSpatial('data/FL_state.shp')
-
-#wbid shapefile for estuaries, subset Tampa Bay
-tb<-readShapeSpatial('data/wbid_tb.shp')
-
-#tampa bay wq data for all tampa bay wbids
-load('data/tb_wq.RData')
-tb.chl<-tb.wq
-
-# upper limit on boxplots
-y.max<-30
-
-##
-# stations
-stats <- paste0('=', c('67', '73', '14', '23', '94'))
-  
-for(stat in stats){
-
-  ##
-  #pick one station
-  sta.one<-stat
-  sta.tst<-tb.chl[tb.chl$StationID==sta.one & as.numeric(tb.chl$year) >= 2000 & as.numeric(tb.chl$year) <= 2010 ,]
-  
-  yr.ave<-melt(lapply(split(sta.tst,sta.tst$year), function(x) x$Chla_ugl))
-  month.ave<-melt(lapply(split(sta.tst,sta.tst$month), function(x) x$Chla_ugl))
-  month.ave$L1<-factor(month.ave$L1,levels=seq(1,12),labels=seq(1,12))
-  
-  plot.dat<-yr.ave
-  fill.dat<-melt(unlist(lapply(split(plot.dat,plot.dat[,2]),function(x) median(x$value))))
-  fill.dat<-data.frame(L1=row.names(fill.dat),Median=fill.dat[,1])
-  fill.val<-merge(plot.dat,fill.dat,by.x='L1')
-  
-  p1<-ggplot(fill.val,aes(x=L1,y=value,fill=Median)) + 
-    geom_boxplot() +
-  	scale_x_discrete('Year') +
-  	scale_y_continuous(
-  		expression(paste('chlorophyll  ',italic(a),' (',italic(mu),'g',l^-1,')')),
-  		limits=c(0,y.max)
-  		) + 
-    scale_fill_gradientn(colours = pal(5)[c(1,2,3)]) + 
-    theme_mine() +
-    theme(legend.position = 'none')
-  
-  plot.dat<-month.ave
-  fill.dat<-melt(unlist(lapply(split(plot.dat,plot.dat[,2]),function(x) median(x$value))))
-  fill.dat<-data.frame(L1=row.names(fill.dat),Median=fill.dat[,1])
-  fill.val<-merge(plot.dat,fill.dat,by.x='L1')
-  
-  p2<-ggplot(fill.val,aes(x=L1,y=value,fill=Median)) + 
-  	geom_boxplot() +
-  	scale_x_discrete('Month') +
-  	scale_y_continuous(
-  		expression(paste('chlorophyll  ',italic(a),' (',italic(mu),'g',l^-1,')')),
-  		limits=c(0,y.max)
-  		) +
-    scale_fill_gradientn(colours = pal(5)[c(1,2,3)]) + 
-    theme_mine() +
-    theme(legend.position = 'none')
-
-  box_nm <- paste0('fig/ggchl_', which(stat == stats), '.pdf')
-  pdf(box_nm, height = 4.5, width = 5.5)
-  grid.arrange(p1,p2)
-  dev.off()
-  
-  map_nm <- paste0('fig/wbid_map_', which(stat == stats), '.pdf')
-  pdf(map_nm)
-  par(mar=c(0,0,2,0))
-  sp::plot(tb,col=pal(5)[2])
-  sp::plot(state,add=T,col=pal(5)[3])
-  sp::plot(tb,add=T,col=alpha('white',0))
-  points(tb.sta,cex=1.5,pch=16,col=alpha('black',0.7))
-  sta.plot<-tb.sta[tb.sta$StationID %in% sta.one,]
-  points(sta.plot,cex=4,pch=16,col='red')
-  title(paste('Station', gsub('=', '', sta.one)), cex.main = 2.5)
-  dev.off()
-
-}
-  
-@
-
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-Spatial and temporal variation in chlorophyll for Tampa Bay\\~\\
-\begin{columns}
-\begin{column}{0.53\textwidth}
-\begin{center}
-\includegraphics<1>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_1.pdf}
-\includegraphics<2>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_2.pdf}
-\includegraphics<3>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_3.pdf}
-\includegraphics<4>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_4.pdf}
-\includegraphics<5>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_5.pdf}
-\end{center}
-\end{column}
-\begin{column}{0.43\textwidth}
-\begin{center}
-\includegraphics<1>[width=\textwidth]{fig/wbid_map_1.pdf}
-\includegraphics<2>[width=\textwidth]{fig/wbid_map_2.pdf}
-\includegraphics<3>[width=\textwidth]{fig/wbid_map_3.pdf}
-\includegraphics<4>[width=\textwidth]{fig/wbid_map_4.pdf}
-\includegraphics<5>[width=\textwidth]{fig/wbid_map_5.pdf}
-\end{center}
-\end{column}
-\end{columns}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\onslide<+->
-\alert{Challenge 2:} We have the data but often lack tools to unambiguously and quantitatively characterize\\~\\
-\onslide<+->
-\vspace{0.2in}
-\begin{quote}
-Data without models are chaos, but models without data are fantasy. \\~\\
-\vspace{0.05in}
-\hspace{0.1in}-- NWQMC 2014 plenary, R. Hirsch via \cite{Nisbet14}
-\end{quote}
-\end{frame}
-
-%%%%%%
-\begin{frame}[shrink]{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-System Wide Monitoring Program, initiated in 1995 to provide continuous data at over 300 stations in 28 US estuaries \\~\\
-\centerline{\includegraphics[width = 0.8\textwidth]{fig/NERRS_locations.png}}
-\tiny
-\flushright
-\href{http://nerrs.noaa.gov/ReservesMap.aspx}{http://nerrs.noaa.gov/ReservesMap.aspx}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\onslide<+->
-SWMP - As of this month, over 56 million records\\~\\
-\begin{itemize}
-\item Weather $>$ 13 million
-\item Water quality $>$ 43 million
-\item Nutrients $>$ 93 thousand \\~\\
-\end{itemize}
-\onslide<+->
-Despite the quantity and quality of the data, very few comparative analyses. Exceptions... \\~\\
-\begin{itemize}
-\item Comparison of net metabolism \cite{Caffrey03}, \cite{Caffrey04}
-\item DO variation between estuaries \cite{Wenner04}
-\item Synthesis reports \cite{Wenner01}, \cite{Sanger02}
-\end{itemize}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\onslide<+->
-Guidance may come in many forms - not just a number \\~\\
-\onslide<+->
-\alert{Case 1:} Chlorophyll drivers in Tampa Bay\\~\\
-\onslide<+->
-\alert{Case 2:} Improving our understanding of seagrass growth and water quality\\~\\
-\onslide<+->
-\alert{Case 3:} `Open-science' tools for analysis of water quality\\~\\
-\onslide<+->
-Each provides an example of addressing the dual challenges of \alert{understanding nutrient dynamics} and \alert{developing quantitative tools} for trend evaluation 
-\end{frame}
-
-\section{Case 1: Tampa Bay}
+\section{Case 2: Florida Estuaries}
 
 % tampa bay map, w/ inset
 <<tb_map, fig = F, results = 'hide', echo = F>>=
@@ -499,11 +591,11 @@ with(bounds,rect(xmin,ymin,xmax,ymax, border = text_col, lwd = 4))
   y = mean(unlist(crds[c('y1','y2')])), 
   size = c(2,2))
 
-dev.off()
+invisible(dev.off())
 @
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{itemize}
@@ -520,7 +612,7 @@ dev.off()
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 <<annual_chl, echo = F, cache = T, message = F, fig.width = 8, fig.height = 4.5, fig.cap = 'Annual trends in chlorophyll for each bay segment.', out.width = '\\linewidth'>>=
 load('data/epc_tb_chl.RData')
 ylabs<-expression(paste('Chloropyhll-',italic(a),' (',italic('\u03bc'),'g ',L^-1,')'))
@@ -577,7 +669,7 @@ p1<-ggplot(to.plo[to.plo$year %in% c('1975','1985','1995','2005'),],aes(x=month.
     axis.title.y=element_blank()
     ) +
   scale_x_discrete('Month',labels=strsplit('JFMAMJJASOND','')[[1]]) + 
-  scale_colour_manual('Year',values=pal(4))
+  scale_colour_manual('Year',values=pal(5)[2:5])
 
 p2<-ggplot(to.plo,aes(x=Salinity_ppt,y=exp(Chla_ugl))) + 
   geom_point(data=to.plo,aes(colour=yr.cut,shape=yr.cut),size=3,alpha=0.6) + 
@@ -587,7 +679,7 @@ p2<-ggplot(to.plo,aes(x=Salinity_ppt,y=exp(Chla_ugl))) +
     ) +
   scale_x_continuous('Salinity') + 
   scale_y_continuous(labels = fmt()) + 
-  scale_colour_manual('Wastewater treatment',values=pal(2)) +
+  scale_colour_manual('Wastewater treatment',values=pal(5)[c(3, 5)]) +
   scale_shape_manual('Wastewater treatment',values=c(16,17))
 
 
@@ -596,10 +688,10 @@ p2<-ggplot(to.plo,aes(x=Salinity_ppt,y=exp(Chla_ugl))) +
 pdf('fig/salmoyr.pdf',height=3.2,width=3.8,family='serif')
 print(p1)
 print(p2)
-dev.off()
+invisible(dev.off())
 @
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 What affects our interpretation of chlorophyll response to nutrients?
 \vspace{-0.1in}
 \captionsetup[subfloat]{captionskip=0pt, position=top}
@@ -619,21 +711,21 @@ What affects our interpretation of chlorophyll response to nutrients?
     {\color{black} Chlorophyll-\textit{a}}}}}
     \hspace{0pt plus 1filll}\null
 
-\caption{Variation in chlorophyll by {\color{zissou5}\protect\subref{fig:salmoyr1}} time and {\color{zissou5}\protect\subref{fig:salmoyr2}} salinity and management in Hillsborough Bay.  Panel {\color{zissou5}\protect\subref{fig:salmoyr1}} is colored before and after wastewater treatment in 1979.}
+\caption{Variation in chlorophyll by {\color{mypal5}\protect\subref{fig:salmoyr1}} time and {\color{mypal5}\protect\subref{fig:salmoyr2}} salinity and management in Hillsborough Bay.  Panel {\color{mypal5}\protect\subref{fig:salmoyr1}} is colored before and after wastewater treatment in 1979.}
 \label{fig:salmoyr}
 \end{figure}
 \captionsetup[subfloat]{position=top}
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 \onslide<+->
 \begin{block}{Study objective}
-Adapt and apply nutrient response model for estuaries that leverages the descriptive capabilities of large datasets \scriptsize [Beck and Hagy, in review]
+Adapt and apply nutrient response model for estuaries that leverages the descriptive capabilities of large datasets \scriptsize \cite{Beck15}
 \end{block}
 \vspace{0.2in}
 \onslide<+->
-Questions of management concern -- Can we...
+Questions of concern -- Can we...
 \begin{itemize}
 \item ...provide a natural history of water quality that is temporally consistent with drivers of change?
 \onslide<+->
@@ -644,22 +736,24 @@ Questions of management concern -- Can we...
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 \onslide<+->
-The \alert{weighted regression (WRTDS)} model is being developed by USGS for pollutant modelling in rivers \cite{Hirsch10}\\~\\
-Based on the idea that pollution concentration is a function of \alert{time}, \alert{discharge}, and \alert{season}\\~\\
+The \emtxt{weighted regression (WRTDS)} model is being developed by USGS for pollutant modelling in rivers \cite{Hirsch10}\\~\\
+Based on the idea that pollution concentration is a function of \emtxt{time}, \emtxt{discharge}, and \emtxt{season}\\~\\
 \onslide<+->
-\alert{Problem:} We want to see if management has an effect on reducing pollutant load over time, but pollutant load varies with discharge.\\~\\
+\emtxt{Problem:} We want to see if management has an effect on reducing pollutant load over time, but pollutant load varies with discharge.\\~\\
 \onslide<+->
-\alert{Solution:} Develop a model that accounts for changes in relationships between drivers of pollution over time.\\~\\
+\emtxt{Solution:} Develop a model that accounts for changes in relationships between drivers of pollution over time.\\~\\
 \onslide<+->
-\alert{Adaptation:} Can this approach be used to evaluate chlorophyll trends in Tampa Bay?
+\emtxt{Adaptation:} Can this approach be used to evaluate chlorophyll trends in Tampa Bay?
 \end{frame}
 
 <<wtex, echo = F, results = 'hide', message = F, eval = F>>=
 load('data/epc_tb_dat.RData')
+load('data/epc_est_act.RData')
 
-dat.in <- tb.dat[tb.dat$year>=2000 & tb.dat$year <=2010,]
+dat.in <- data.frame(tb.dat, pred = epc.est.act$fit.md)
+dat.in <- dat.in[dat.in$year>=2000 & dat.in$year <=2010,]
 dat.in <- dat.in[dat.in$seg=='Hillsborough Bay',]
 
 row_exs <- 1:nrow(dat.in)
@@ -706,7 +800,7 @@ for(row_ex in row_exs){
   p3<-ggplot(p3.dat,aes(x=Date,y=Wt)) + 
     geom_line() + 
     #geom_line(aes(y=sal.ref),col='red') + 
-    geom_hline(yintercept=p3.dat[yint,'sal.ref'],col='black',lwd=1.5,lty=2) +
+    geom_hline(yintercept=p3.dat[yint,'sal.ref'],col='black',lwd=1.4,lty=2) +
     scale_y_continuous(name=element_blank(),limits=c(0,1)) +
     scale_x_date(name=element_blank(),limits=as.Date(c(p3x0,p3x1)), breaks = as.Date(c(p3x0,p3x1)), labels = date_format("%Y-%m")) +
     ggtitle(titles[[3]]) +
@@ -725,6 +819,7 @@ for(row_ex in row_exs){
   p.dat<-data.frame(
     Date=dat.in$date.f,
     Chla_ugl=dat.in$Chla_ugl,
+    pred = dat.in$pred,
     sal.ref=dat.in$sal.ref,
     month.wt=ref.wt[,1],
     year.wt=ref.wt[,2],
@@ -736,15 +831,20 @@ for(row_ex in row_exs){
     mo~yr~italic(Sal[ff])~sal,
     list(mo=as.character(ref.in$month.name),yr=paste0(ref.in$year,', '),sal=as.character(round(ref.in$sal.ref,2)))
     )
-    
-  p.dat.plo<-ggplot(p.dat,aes(x=Date,y=sal.ref)) +
+   
+  # predicted values to plot
+  preds <- p.dat[1:row_ex, ]
+  
+  ylabs<-expression(paste('Chlorophyll-',italic(a),' (',italic('\u03bc'),'g ',L^-1,')'))
+  p.dat.plo<-ggplot(p.dat,aes(x=Date,y=Chla_ugl)) +
     geom_point(aes(size=all.wt,colour=all.wt)) +
-    scale_y_continuous(limit=c(0,0.7),name=expression(italic(Sal[ff]))) +
+    scale_y_continuous(limit=c(0,4.5),name=ylabs) +
     scale_x_date(name=element_blank()) +
-    scale_size(range=c(4,12)) +
+    scale_size(range=c(2,12)) +
+    geom_line(data = preds, aes(x = Date, y = pred), size = 1.3, alpha = 0.6) +
     ggtitle(title.val) + 
     theme_mine() +
-    scale_colour_gradientn(colours = pal(100)) +
+    scale_colour_gradientn(colours = pal(5)[2:5]) +
     theme(legend.position = 'none')
   
   grid.arrange(
@@ -757,7 +857,7 @@ dev.off()
 @
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 How does weighted regression work?
 \begin{center}
 \animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
@@ -765,18 +865,18 @@ How does weighted regression work?
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 This gives us improved predictions of chlorophyll dynamics...
-<</predvals, echo = F, message = F, fig.width = 8.5, fig.height = 4, fig.cap = 'Predicted and observed monthly chlorophyll by segment.', out.width = '\\linewidth', cache = T>>=
+<<predvals, echo = F, message = F, fig = T, fig.width = 8.5, fig.height = 4, fig.cap = 'Predicted and observed monthly chlorophyll by segment.', out.width = '\\linewidth', cache = T>>=
 
 load('data/epc_est_act.RData')
 
 #y axis label for plots
 ylabs<-expression(paste('Chloropyhll-',italic(a),' (',italic('\u03bc'),'g ',L^-1,')'))
 
-p1 <- ggplot(epc.est,aes(x=dec.time)) + 
+ggplot(epc.est,aes(x=dec.time)) + 
   geom_point(aes(y=exp(Chla_ugl)),alpha=0.7) +
-  geom_line(aes(y=bt.md),colour=pal(num_col)[1],alpha=0.9, size=1) +
+  geom_line(aes(y=bt.md),colour=pal(num_col)[3],alpha=0.9, size=1) +
   scale_y_continuous(ylabs) +
   facet_wrap(~seg,nrow=2,ncol=2,scales='free_y') +
   scale_x_continuous(
@@ -786,13 +886,15 @@ p1 <- ggplot(epc.est,aes(x=dec.time)) +
   theme(
     legend.position = 'none'
     )
-
-print(p1)
-
 @
 \end{frame}
 
-<<hill, echo = F, cache = T>>=
+%%%%%%
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+Because the model is dynamic, we have parameters describing the relationship of chlorophyll with other factors specific to different time periods \\~\\
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+<<hill, echo = F, cache = T, fig.width = 4, fig.height = 3.5>>=
 load('data/salwt_grd.RData')
 load('data/epc_est.RData')
 
@@ -839,24 +941,15 @@ p1 <- ggplot(to.plo, aes(x = sal.grid, y = bt.md, group = dec.time,
   scale_x_continuous(name=expression(italic(Sal[ff]))) +
   theme_mine() +
   theme(legend.position = 'bottom') +
-  scale_colour_gradientn('Year', colours = pal(5))
+  scale_colour_gradientn('Year', colours = pal(5)[c(2:5)])
 
-pdf('fig/hill.pdf', width = 4, height =3.5, family = 'serif')
-print(p1)
-dev.off()
+p1
 @
-
-%%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
-Because the model is dynamic, we have parameters describing the relationship of chlorophyll with other factors specific to different time periods \\~\\
-\begin{columns}[T]
-\begin{column}{0.45\textwidth}
-\centerline{\includegraphics[width = \textwidth]{fig/hill.pdf}}
 \end{column}
 \begin{column}{0.45\textwidth}
 \begin{itemize}
-\item Early period (blue) - point-sources
-\item Late period (red) - non-point sources
+\item Early period (light blue) - point-sources
+\item Late period (dark blue) - non-point sources
 \item Chlorophyll shows increasing response to freshwater input in recent years
 \end{itemize}
 \end{column}
@@ -864,7 +957,7 @@ Because the model is dynamic, we have parameters describing the relationship of 
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 \onslide<+->
 What does this mean for Tampa Bay and elsewhere?\\~\\
 \begin{itemize}
@@ -876,13 +969,6 @@ The model parameters show us a picture...
 \centerline{\includegraphics[width = \textwidth]{fig/title_plo.pdf}}
 \end{frame}
 
-\section{Case 2: Seagrass and water quality}
-
-%%%%%%
-\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
-
-\end{frame}
-
 \section{Case 3: Open-source tools}
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
@@ -891,7 +977,7 @@ Progress in science is incremental and builds on past work\\~\\
 This requires accurate reproduction of methods\\~\\
 The ability to reproduce methods will always be a challenge...\\~\\
 \onslide<+->
-...digital tools have proliferated to \alert{facilitate sharing}\\~\\
+...digital tools have proliferated to \emtxt{facilitate sharing}\\~\\
 \begin{columns}
 \begin{column}{0.25\textwidth}
 \centerline{\includegraphics[width = \textwidth]{fig/Rlogo.png}}
@@ -910,7 +996,7 @@ The ability to reproduce methods will always be a challenge...\\~\\
 
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-Returning back to the System Wide Monitoring Program...\\~\\
+The NERRS System-Wide Monitoring Program...\\~\\
 \centerline{\includegraphics[width = 0.8\textwidth]{fig/NERRS_locations.png}}
 \end{frame}
 
@@ -920,8 +1006,8 @@ Returning back to the System Wide Monitoring Program...\\~\\
 The SWMP database and others like it represent incredible opportunities to further our knowledge of natural systems...\\~\\
 ...including the effects of eutrophication \\~\\
 \onslide<+->
-\alert{Problem:} These data are numerous and not easily compared\\~\\
-\alert{Solution:} Develop open-source tools that address the challenges of large-scale comparative analyses with continuous monitoring data\\~\\
+\emtxt{Problem:} These data are numerous and not easily compared\\~\\
+\emtxt{Solution:} Develop open-source tools that address the challenges of large-scale comparative analyses with continuous monitoring data\\~\\
 \onslide<+->
 The benefits include:
 \begin{itemize}
@@ -932,227 +1018,50 @@ The benefits include:
 \end{frame}
 
 %%%%%%
+\begin{frame}[t]{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+Each reserve has fixed, continuous monitoring stations for \emtxt{water quality} (15 min), \emtxt{meteorology} (15 min), and \emtxt{nutrients} (monthly)\\~\\
+As of this month, $>$ 60 million records available online\\~\\
+Raw data look like this:\\~\\
+\centerline{\includegraphics[width = 0.9\textwidth]{fig/qaqc_ex.png}}
+\end{frame}
+
+%%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\alert{SWMPr} is a freely available package for use with R \\~\\
-Designed to facilitate the analysis of SWMP data by providing functions that...\\~\\
+\centerline{\includegraphics[width = 0.8\textwidth]{fig/swmpr_logo.png}}
+\vspace{0.15in}
+\emtxt{SWMPr} is a freely available package for use with R \\~\\
 \begin{itemize}
-\item \alert{Retrieve} SWMP data for any site and date combination \\~\\ 
-\item \alert{Organize} the data using standard pre-processing techniques \\~\\
-\item \alert{Analyze} the data using a suite of exploratory and graphical analysis tools \\~\\
+\item \emtxt{Retrieve} SWMP data for any site and date combination
+\item \emtxt{Organize} the data using standard pre-processing techniques
+\item \emtxt{Analyze} the data using a suite of exploratory and graphical analysis tools
 \end{itemize}
 \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-What we've done so far... estimates of ecosystem metabolism 
-<</metab, message = F, fig = T, fig.width = 9, fig.height = 5, family = 'serif', cache = T, echo = F>>=
+\href{https://swmprats.net}{SWMPrats.net}: \emtxt{S}ystem-\emtxt{W}ide \emtxt{M}onitoring \emtxt{P}rogram \emtxt{R}esources for the \emtxt{A}nalysis of \emtxt{T}ime \emtxt{S}eries \\~\\
+\centerline{\fbox{\includegraphics[width = 0.75\textwidth]{fig/swmprats_home.png}}}
+\end{frame}
 
-# load(file='M:/wq_models/SWMP/raw/rproc/dat_nem.RData')
-# 
-# sum.fun <- function(x){
-# 
-#   Pg <- mean(x$Pg,na.rm=T)
-#   Rt <- mean(x$Rt,na.rm=T)
-#   data.frame(Pg,Rt)
-#   
-#   }
-#   
-# to.plo <- lapply(dat.nem, function(x){
-#   x$Date <- as.numeric(strftime(x$Date, '%Y'))
-#   tmp <- lapply(split(x, x$Date), sum.fun)
-#   tmp <- do.call('rbind', tmp)
-#   sum.fun(tmp)
-#   })
-# nem_sum <- melt(to.plo)
-# save(nem_sum, file = 'data/nem_sum.RData')
-
-load(file='data/nem_sum.RData')
-to.plo <- nem_sum
-
-#reassign factors for ranking in plot
-sort.val<-order(to.plo[to.plo$variable=='Pg','value'])
-to.plo$L1<-factor(to.plo$L1)
-to.plo$L1<-factor(
-  to.plo$L1,
-  levels=levels(to.plo$L1)[sort.val],
-  labels=levels(to.plo$L1)[sort.val]
-  )
-new.labs<-c('Mean annual production','Mean annual respiration')
-to.plo$variable<-factor(to.plo$variable,levels=c('Pg', 'Rt'),labels=new.labs)
-
-ylabs<-expression(paste('mmol ', O[2],' ', m^-2,' ', d^-1))
-
-p<-ggplot(to.plo,aes(x=L1,y=value,group=variable,fill=variable)) + 
-  geom_bar(stat='identity') + 
-  scale_y_continuous(ylabs) + 
-  facet_wrap(~variable,ncol=1, scales = 'free_y') + 
-  scale_x_discrete(name=element_blank()) + 
-  theme_mine() + 
-  theme(
-    axis.text.x = element_text(angle = 90, vjust=0.5,hjust=1,size=6),
-    legend.position='none'
-    ) +
-  scale_fill_manual(values = pal(5)[c(2, 4)])
-print(p)
-@
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+Two online applications can help visualize trends \\~\\
+\begin{columns}[t]
+\begin{column}{0.45\textwidth}
+\centerline{\emtxt{\href{https://beckmw.shinyapps.io/swmp_summary}{Summary plots}}}
+\centerline{\fbox{\includegraphics[width = 0.9\textwidth]{fig/swmp_summary.png}}}
+\end{column}
+\begin{column}{0.45\textwidth}
+\centerline{\emtxt{\href{https://beckmw.shinyapps.io/swmp_comp}{Trends map}}}
+\centerline{\fbox{\includegraphics[width = 0.935\textwidth]{fig/swmp_comp.png}}}
+\end{column}
+\end{columns}
 \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
 \onslide<+->
-What we've done so far... detiding dissolved oxygen data
-<<sapdo, cache = T, fig.height = 2, fig.width = 7, out.width = '0.9\\textwidth', eval = T, echo = F, family = 'serif'>>=
-######
-# SAPHD example
-load('data/case_grds.RData')
-casewins <- list(6, 1, 0.5)
-
-# subsets by case. date range, window comb
-case <- 'SAPDC'
-dat.rng<-as.Date(c('2012-02-01','2012-02-14')) 
-sel_vec <- with(case_grds, which(dec_time == casewins[[1]] & hour == casewins[[2]] & Tide == casewins[[3]]))
-sel_vec <- paste0(case, '_wtreg_', sel_vec, '.RData')
-
-load('data/SAPDC_wtreg_12.RData')
-inst_subs <- get(gsub('.RData', '', sel_vec))
-
-tzone <- attr(inst_subs$DateTimeStamp, 'tzone')
-
-inst_subs$Date <- as.Date(inst_subs$DateTimeStamp, tz = tzone)
-inst.rng <- inst_subs$Date<=dat.rng[2] & inst_subs$Date>=dat.rng[1]
-inst_subs <- inst_subs[inst.rng,]
-
-# category for plotting
-inst_subs$cats <- 'out'
-inst_subs$cats[inst_subs$Date > as.Date('2012-02-07')] <- 'in'
-
-# function for setting range on y axis
-rng.fun<-function(vec.in){
-  rngs<-range(vec.in,na.rm=T)
-  buffs<-0.07*abs(diff(rngs))
-  c(rngs[1]-buffs,rngs[2]+buffs)
-  }
-
-##
-# out of phase plots
-
-# DO plot
-to_plo <- met.day.fun(inst_subs, case)
-to_plo <- to_plo[to_plo$cats %in% 'out', ]
-names(to_plo)[names(to_plo) %in% 'variable'] <- 'solar'
-ggpoly1 <- poly.fun(to_plo$solar, to_plo, for_leg = T)
-ggpoly2 <- poly.fun(to_plo$solar, to_plo)
-
-ylab<-expression(paste('DO (mg ',L^-1,')'))
-p1 <- ggplot(to_plo, aes(x = DateTimeStamp)) + 
-  ggpoly1 +
-  geom_line(aes(y = DO_obs), colour = pal(5)[5]) +
-  coord_cartesian(ylim = rng.fun(to_plo$DO_obs)) +
-  scale_fill_manual(values=pal(5)[3],labels='Day') +
-  scale_y_continuous(ylab) +
-  theme_mine() +
-  theme(legend.position = 'none', axis.title.x = element_blank())
-print(p1)
-@
-\onslide<+->
-<<saptide, cache = T, fig.height = 2, fig.width = 7, out.width = '0.9\\textwidth', eval = T, echo = F, family = 'serif'>>=
-######
-# SAPHD example
-load('data/case_grds.RData')
-casewins <- list(6, 1, 0.5)
-
-# subsets by case. date range, window comb
-case <- 'SAPDC'
-dat.rng<-as.Date(c('2012-02-01','2012-02-14')) 
-sel_vec <- with(case_grds, which(dec_time == casewins[[1]] & hour == casewins[[2]] & Tide == casewins[[3]]))
-sel_vec <- paste0(case, '_wtreg_', sel_vec, '.RData')
-
-load('data/SAPDC_wtreg_12.RData')
-inst_subs <- get(gsub('.RData', '', sel_vec))
-
-tzone <- attr(inst_subs$DateTimeStamp, 'tzone')
-
-inst_subs$Date <- as.Date(inst_subs$DateTimeStamp, tz = tzone)
-inst.rng <- inst_subs$Date<=dat.rng[2] & inst_subs$Date>=dat.rng[1]
-inst_subs <- inst_subs[inst.rng,]
-
-# category for plotting
-inst_subs$cats <- 'out'
-inst_subs$cats[inst_subs$Date > as.Date('2012-02-07')] <- 'in'
-
-# function for setting range on y axis
-rng.fun<-function(vec.in){
-  rngs<-range(vec.in,na.rm=T)
-  buffs<-0.07*abs(diff(rngs))
-  c(rngs[1]-buffs,rngs[2]+buffs)
-  }
-
-##
-# out of phase plots
-
-# DO plot
-to_plo <- met.day.fun(inst_subs, case)
-to_plo <- to_plo[to_plo$cats %in% 'out', ]
-names(to_plo)[names(to_plo) %in% 'variable'] <- 'solar'
-ggpoly1 <- poly.fun(to_plo$solar, to_plo, for_leg = T)
-ggpoly2 <- poly.fun(to_plo$solar, to_plo)
-
-# tide plot
-ylab<-expression(paste('Height (m)'))
-p2 <- ggplot(to_plo, aes(x = DateTimeStamp)) + 
-  ggpoly1 +
-  geom_line(aes(y = Depth), colour = pal(5)[5]) +
-  coord_cartesian(ylim = rng.fun(to_plo$Depth)) +  
-  theme_mine() + 
-  scale_y_continuous(ylab) +
-  scale_fill_manual(values=pal(5)[3],labels='Day') +
-  theme(legend.position = 'none', axis.title.x = element_blank())
-print(p2)
-@
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\vspace{-0.1in}
-<<dtd_met, results = 'hold', cache = T, fig.height = 5.5, fig.width = 9, out.width = '\\textwidth', eval = T, echo = F, family = 'serif'>>=
-load('data/SAPDC_wtreg_12.RData')
-to_plo <- get('SAPDC_wtreg_12')
-
-load('data/sapdc_met.RData')
-met_plo <- melt(sapdc_met, id.var = 'Date', measure.var = c('Pg', 'Rt', 'Pg_dtd', 'Rt_dtd'))
-met_plo$type <- rep('Observed', length = nrow(met_plo))
-met_plo$type[grep('dtd$', met_plo$variable)] <- 'Detided'
-met_plo$variable <- gsub('_dtd$', '', met_plo$variable)
-met_plo$type<- factor(met_plo$type, levels = c('Observed', 'Detided'), labels = c('Observed', 'Detided'))
-met_plo$variable <- factor(met_plo$variable, levels = c('Pg', 'Rt'), labels = c('Production', 'Respiration'))
-
-ylab<-expression(paste('DO (mg ',L^-1,')'))
-p1 <- ggplot(to_plo, aes(x = DateTimeStamp)) + 
-  geom_line(aes(y = DO_obs, colour = 'Observed')) +
-  geom_line(aes(y = DO_nrm, colour = 'Detided')) +
-  scale_colour_manual('', values=pal(5)[c(2, 5)]) +
-  scale_y_continuous(ylab) +
-  theme_mine() +
-  theme(legend.position = 'top', axis.title.x = element_blank())
-
-ylab<-expression(paste('mmol ', O[2],' ', m^-2,' ', d^-1))
-p2 <- ggplot(met_plo, aes(x = Date, y = value, group = variable, colour = variable)) + 
-  geom_line() +
-  geom_point() +
-  facet_wrap(~type, ncol = 1) + 
-  scale_colour_manual('', values=pal(5)[c(1, 3)]) +
-  scale_y_continuous(ylab) +
-  theme_mine() +
-  theme(legend.position = 'top', axis.title.x = element_blank())
-
-grid.arrange(p1, p2, ncol = 1, heights = c(1.5,2))
-@
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\onslide<+->
-Tools in the SWMPr package (or that will be included) have facilitated comparative analyses of millions of water quality records from NERRS \\~\\
+Tools in the SWMPr package have facilitated comparative analyses of millions of water quality records from NERRS \\~\\
 These tools can help improve our understanding of nutrient pollution and eutrophication \\~\\
 \onslide<+->
 Potential for many other applications... actively being developed \\~\\
@@ -1172,46 +1081,39 @@ Potential for many other applications... actively being developed \\~\\
 \end{columns}
 \end{frame}
 
-\section{Conclusions}
 %%%%%%
 \begin{frame}{\textbf{Conclusions}}
-The analysis of water quality will continue to require the use of novel tecniques to interpret the data \\~\\
+The analysis of water quality will continue to require the use of novel techniques to interpret the data \\~\\
 These needs are motivated by: \\~\\
 \begin{itemize}
 \item The continued relevance of stressors that influence ecosystem conditions \\~\\
 \item Our increasing ability to gather raw, uninterpreted data \\~\\
 \end{itemize}
-Our methods must be able to make sense of \alert{historical trends}, as well as predict \alert{future conditions}
+Our methods must be able to make sense of \emtxt{historical trends}, as well as predict \emtxt{future conditions}
 \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{Conclusions}}
-Our ability to \alert{share}, \alert{reproduce}, and \alert{collaborate} is essential \\~\\
-\alert{SWMPr package:} \href{https://github.com/fawda123/SWMPr}{https://github.com/fawda123/SWMPr} \\~\\
-\alert{Seagrass applications:} \href{https://beckmw.shinyapps.io/sg_depth}{https://beckmw.shinyapps.io/sg\_depth} \\~\\
-\alert{Ecosystem metabolism and detiding:} \href{http://spark.rstudio.com/beckmw/detiding_cases/}{http://spark.rstudio.com/beckmw/detiding\_cases/} \\~\\
-\alert{This presentation:} \href{https://github.com/fawda123/wqtrends_pres}{https://github.com/fawda123/wqtrends\_pres}
+Our ability to \emtxt{share}, \emtxt{reproduce}, and \emtxt{collaborate} is essential \\~\\
+\emtxt{SWMPr package:} \href{https://github.com/fawda123/SWMPr}{https://github.com/fawda123/SWMPr} \\~\\
+\emtxt{Summaries of SWMP parameters:} \href{https://beckmw.shinyapps.io/swmp_summary}{https://beckmw.shinyapps.io/swmp\_summary} \\~\\
+\emtxt{Trends in SWMP parameters:} \href{https://beckmw.shinyapps.io/swmp_comp}{https://beckmw.shinyapps.io/swmp\_comp} \\~\\
+\emtxt{This presentation:} \href{https://github.com/fawda123/ncea_pres}{https://github.com/fawda123/ncea\_pres} \\~\\
+\emtxt{Github}: \href{https://github.com/fawda123/}{github.com/fawda123/} \\~\\
+\emtxt{Blog}: \href{http://beckmw.wordpress.com/}{beckmw.wordpress.com/}
 \end{frame}
 
 %%%%%%
 \begin{frame}
 Acknowledgments:\\~\\
 \begin{columns}
-\begin{column}{0.6\textwidth}
+\begin{column}{0.8\textwidth}
 {\footnotesize
 Research staff and employees at USEPA Gulf Ecology Division - especially J. Hagy, M. Murrell\\~\\
 Field staff and data managers at Hillsborough County Environmental Protection Commission\\~\\
 Research coordinators, technicians, and field staff of the National Estuarine Research Reserve System}\\~\\
 \end{column}
-\begin{column}{0.3\textwidth}
-\vspace{-0.2in}
-\begin{center}
-{\tiny
-Wes Anderson Zissou color theme borrowed and adapted from \href{https://github.com/karthik/wesanderson}{github.com/karthik}\\~\\
-\includegraphics[width=0.55\linewidth]{fig/zissou.png}\\~\\
-\vspace{-0.15in}
-\scalebox{0.7}{\hbox{\tiny Image credit:\thinspace{\tiny \href{http://stephenmorrow.deviantart.com/}{Stephen Morrow}}}}}
-\end{center}
+\begin{column}{0.2\textwidth}
 \end{column}
 \end{columns}
 \vfill
@@ -1223,9 +1125,7 @@ Funding sources and contact:\\~\\
 \begin{column}{0.5\textwidth}
 \scriptsize
 \href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov} \\~\\
-Phone: 8509342480 \\~\\
-Github: \href{https://github.com/fawda123/}{github.com/fawda123/} \\~\\
-Blog: \href{http://beckmw.wordpress.com/}{beckmw.wordpress.com/}
+Phone: 8509342480
 \end{column}
 \end{columns}
 \vspace{0.2in}

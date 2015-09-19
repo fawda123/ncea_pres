@@ -65,10 +65,12 @@
 
 \setbeamertemplate{navigation symbols}{}
 
-%tikz objects
-\tikzstyle{decision} = [diamond, draw, text width=6em, text badly centered, inner sep=2pt, top color=white, bottom color=zissou3]
-\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, rounded corners, minimum height=3em, minimum width=8em, top color = white, bottom color=zissou3]
-\tikzstyle{declare} = [rectangle, draw, text width=10em, text centered, minimum height=3em, minimum width=8em, top color = white, bottom color=zissou3]
+% custom colors
+\definecolor{mypal1}{HTML}{F0F9E8}\definecolor{mypal2}{HTML}{BAE4BC}\definecolor{mypal3}{HTML}{7BCCC4}\definecolor{mypal4}{HTML}{43A2CA}\definecolor{mypal5}{HTML}{0868AC}
+
+\tikzstyle{decision} = [diamond, draw, text width=6em, text badly centered, inner sep = 2pt, top color=white, bottom color=mypal3, drop shadow]
+\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, rounded corners, minimum height=3em, minimum width=8em, top color = white, bottom color=mypal4,  drop shadow]
+\tikzstyle{declare} = [rectangle, draw, text width=10em, text centered, minimum height=3em, minimum width=8em, top color = white, bottom color=mypal5,  drop shadow]
 
 % knitr setup
 
@@ -78,9 +80,6 @@
 
 % get online bib file
 
-
-% custom colors
-\definecolor{mypal1}{HTML}{F0F9E8}\definecolor{mypal2}{HTML}{BAE4BC}\definecolor{mypal3}{HTML}{7BCCC4}\definecolor{mypal4}{HTML}{43A2CA}\definecolor{mypal5}{HTML}{0868AC}
 
 % my custom ggplot theme
 
@@ -93,15 +92,18 @@
 \setbeamercolor{structure}{fg=mypal4} % bottom banner
 \setbeamercolor{normal text}{fg=mypal5}
 \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{fig/back_tmp.pdf}}
+
+% macros
+\newcommand{\emtxt}[1]{\textbf{\textit{#1}}}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
-\title[Evaluating water quality]{\textbf{The search for truth in numbers: Quantitative approaches for evaluating trends in water quality data}}
+\title[Evaluating water quality]{\textbf{Quantitative approaches to evaluate surface water quality: Examples from Minnesota Lakes to Florida Estuaries}}
 \author[M. Beck]{Marcus W. Beck}
 
 \institute[USEPA]{ORISE post-doc, USEPA National Health and Environmental Effects Research Laboratory, Gulf Ecology Division, \href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov}, Phone: 8509342480}
 
-\date{Oct. 24, 2014}
+\date{Sep. 22, 2015}
 
 \titlegraphic{\includegraphics[width=0.95\linewidth]{fig/title_plo.pdf}}
 
@@ -113,11 +115,39 @@
 \section{Background}
 
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\begin{frame}{\textbf{Assessing environmental condition}}{\textbf{How do we collect and use data?}}
+\onslide<+->
+The foundation of environmental management is a strong monitoring network \scriptsize \cite{NRC90}\\~\\
+\normalsize
+Monitoring provides information for decision-making based on apparent trends...
+\vspace{0.2in}
+\begin{center}
+\emtxt{What are the changes in environmental condition over time?}\\~\\
+\emtxt{Are these changes `good' or `bad' based on our management objectives?}\\~\\
+\emtxt{What may have caused these changes?}
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Assessing environmental condition}}{\textbf{How do we collect and use data?}}
+\emtxt{The good news}: We are getting better at monitoring - standardized, automated, increased coverage, real-time/continuous \\~\\
+\emtxt{The bad news}: Our ability to use these data for decision-making has not kept pace with availability! \\~\\
+
+
+{\centering \includegraphics[width=0.55\textwidth]{fig/theo-1} 
+
+}
+
+
+
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Assessing environmental condition}}{\textbf{How do we collect and use data?}}
+Most of my research career has focused on using monitoring data to understand eutrophication in one form or another \\~\\
 \onslide<+->
 \begin{quote}
-Eutrophication (noun) - an \alert{increase} in the rate of supply of \alert{organic matter} to an ecosystem\\~\\
-\vspace{0.05in}
+Eutrophication (noun) - an \emtxt{increase} in the rate of supply of \emtxt{organic matter} to an ecosystem\\
 \hfill -- \cite{Nixon95}
 \end{quote}
 \begin{center}
@@ -137,190 +167,324 @@ Eutrophication (noun) - an \alert{increase} in the rate of supply of \alert{orga
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\begin{frame}{\textbf{Assessing environmental condition}}{\textbf{How do we collect and use data?}}
 \onslide<+->
-Human inputs can greatly accelarate eutrophication... particularly for coastal waters \\~\\
+Today's talk: My experience synthesizing and evaluating monitoring data to inform our understanding of the eutrophication paradigm\\~\\
 \begin{itemize}
-\onslide<+->
-\item Depletion of bottom water dissolved oxygen \cite{Diaz08}
-\onslide<+->
-\item Increase in frequency/severity of harmful algal blooms \cite{Glibert13}
-\onslide<+->
-\item Reduction or extirpation of seagrass communities \cite{Tomasko05}
-\onslide<+->
-\item Propogated effects to upper trophic levels \cite{Powers05}
-\end{itemize}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
-\centerline{\includegraphics[width = 0.95\textwidth]{fig/redtide.png}}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
-\onslide<+->
-Water Quality Act Amendments of 1972 \\~\\
-\begin{itemize}
-\item Federal mandates to \alert{protect and restore} the chemical, physical, and biological integrity of \alert{surface waters}
-\item Protection and restoration requires \alert{criteria} \\~\\
+\item \emtxt{Case 1}: Understanding biological response of aquatic plants in Minnesota lakes \\~\\
+\item \emtxt{Case 2}: Evaluating long-term datasets of chlorophyll in Tampa Bay \\~\\
+\item \emtxt{Case 3}: Development of `open-science' tools for the National Estuarine Research Reserve System \\~\\
 \end{itemize}
 \onslide<+->
-Numeric nutrient criteria \\~\\
-\begin{itemize}
-\item The amounts of contaminants or pollutants that may be present without impairing aquatic life or human health 
-\item E.g., nutrients limits for seagrass in Indian River Lagoon...
-\end{itemize}
+Each case addresses the challenges of \emtxt{understanding nutrient dynamics} and \emtxt{developing quantitative tools} for assessment
 \end{frame}
 
+\section{Case 1: Minnesota lakes}
+
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
-\onslide<+->
-Nutrient limits using seagrass depth-limit targets \tiny \cite{Steward07}\\~\\
-\begin{columns}[T]
-\begin{column}{0.45\textwidth}
-\centerline{\includegraphics[width = 0.9\textwidth]{fig/irl_map.png}}
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centerline{\includegraphics[width=\textwidth]{fig/mn_lake_inset.pdf}}
 \end{column}
-\begin{column}{0.45\textwidth}
-\centerline{\includegraphics[width = 0.92\textwidth]{fig/irl_reg.png}}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{fig/mn_seal.jpg} \\~\\
+\includegraphics[width=0.9\textwidth]{fig/mn_lake.jpg}
+\end{center}
 \end{column}
 \end{columns}
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
-\onslide<+->
-USEPA national strategy for the development of regional nutrient criteria\\~\\
-\begin{itemize}
-\item Aid states' ability to control and reduce nutrient enrichments \\~\\
-\item Responsibility of EPA to develop criteria guidance \\~\\
-\end{itemize}
-\scriptsize
-\hfill \cite{USEPA98}
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\centerline{\includegraphics[width=0.9\textwidth]{fig/stressors.pdf}}
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+Water Quality Act Amendments of 1972
+\begin{itemize}
+\item{Federal mandates to protect and restore the chemical, physical, and \emtxt{biological} integrity of surface waters}
+\item{Protection and restoration requires monitoring \\~\\}
+\end{itemize}
+\onslide<+->
+Index of biotic integrity (IBI) \cite{Karr81,Karr86}
+\begin{itemize}
+\item{Monitoring framework for definition and evaluation of biotic integrity}
+\item{Uses aquatic organisms as surrogates of ecosystem health}
+\item{A multimetric index that is regionally specific}
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+The macrophyte IBI can be used to evaluate relative lake condition by monitoring and evaluating aquatic plant metrics \cite{Beck10} \\~\\
+\onslide<+->
+Composed of eight metrics, summed to get one IBI score per lake \\~\\
+\begin{itemize}
+\item{MAXD: Maximum depth of plant growth}
+\item{LITT: Percentage of littoral zone vegetated}
+\item{OVER: Number of species with frequency occurrence $>$10\%}
+\item{EMFL: Relative frequency of emergent-floating species}
+\item{SUBM: Relative frequency of submersed species}
+\item{SENS: Relative frequency of sensitive species}
+\item{TOLR: Relative frequency of tolerant species}
+\item{TAXA: Number of native taxa \\~\\}
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{columns}
+\onslide<+->
+\begin{column}{0.5\textwidth}
+\begin{center}
+Related to changes in water quality \\~\\
+\includegraphics[width=\textwidth]{fig/Beck_GEDsem-ibi_tsi.pdf}
+\end{center}
+\end{column}
+\onslide<+->
+\begin{column}{0.5\textwidth}
+\begin{center}
+High precision given sampling effort \\~\\
+\includegraphics[width=\textwidth]{fig/Beck_GEDsem-ibi_eff.pdf}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->{How appropriate is the IBI for characterizing effects of multiple stressors? Will it work within an assessment/impairment framework?\\~\\}
+\onslide<+->{
+\vspace*{-0.1in}
+\begin{center}
+\scalebox{0.8}{
+\begin{tikzpicture}[node distance=2.5cm, auto, >=stealth]
+	\node[block] (a) {Assess waters};
+	\onslide<+->{
+	\node[decision] (b)  [below of=a] {Fulfill standards?};
+ 	\draw[->] (a) -- (b);}
+ 	\onslide<+->{
+ 	\node[declare] (c)  [below left of=b, node distance=4cm]  {Non-degradation};
+ 	\draw[->] (b) -- node[above left] {yes} (c);}
+ 	\onslide<+->{
+ 	\node[declare] (d)  [below right of=b, node distance=4cm]  {Impairment};
+ 	\draw[->] (b) -- node[above right] {no} (d);}
+ 	\onslide<+>{
+ 	\node[block] (e)  [right of=b, node distance=6cm]    {Remediate};
+ 	\draw[->] (d.east) to [out=360,in=270] (e.south);
+ 	\draw[->] (e.north) to [out=90,in=360] (a.east);}
+ 	\onslide<+->{
+ 	\node[block] (f)  [below of=e, node distance=1cm]    {Stressor ID};
+ 	\node[block] (g)  [above of=e, node distance=1cm]    {Remediate};
+	\draw[->] (d.east) to [out=360,in=270] (f.south);
+	\draw[->] (f.north) to [out=90,in=270] (g.south);
+ 	\draw[->] (g.north) to [out=90,in=360] (a.east);}
+\end{tikzpicture}}
+\end{center}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+Consider an IBI with 12 metrics, each scored 1, 3, or 5\\~\\
+How many different combinations of metrics lead to the same score?
+\onslide<+->
+
+
+{\centering \includegraphics[width=\maxwidth]{fig/ibi_comb-1} 
+
+}
+
+
+
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+\textbf{\emph{Develop and implement a framework for evaluating the macrophyte IBI to inform its use in biological monitoring:}} \\~\\
+\begin{enumerate}
+\onslide<+->
+\item How well does the index distinguish between signal and noise? \\~\\
+\onslide<+->
+\item Can information on stressors and their effects be quantified with certainty? \\~\\
+\onslide<+->
+\item What stressors primarily influence index response? \\~\\
+\onslide<+->
+\item How appropriate is a multimetric index for characterizing effects of multiple stressors?
+\end{enumerate}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{itemize}
+\item Dataset of 332 vegetation surveys, courtesy of MNDNR
+\item Numerous covariates describing lake characteristics and anthropogenic stressors
+\end{itemize}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centerline{\includegraphics[width=\textwidth]{fig/Beck_GEDsem-ibi_data.pdf}}
+\end{column}
+\begin{column}{0.5\textwidth}
+\scriptsize
+\begin{itemize}
+\item{lake surface area}
+\item{maximum lake depth}
+\item{trophic state index}
+\item{growing degree days}
+\item{percent agriculture in wshed}
+\item{percent impervious surfaces in wshed}
+\item{density of groundwater wells in wshed}
+\item{wshed area to lake area}
+\item{crop productivity index of wshed}
+\item{dock density}
+\item{...}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+Ecological and numerical complexity warrants the use of creative solutions\\~\\
+Neural networks to model IBI response\\~\\
+\begin{itemize}
+\onslide<+->
+\item{Essentially a large, non-linear regression model free of assumptions that can handle multivariate response}
+\onslide<+->
+\item{Models relationships among variables using a network that mimics neuronal structure of the human brain}
+\onslide<+->
+\item{`Supervised' neural networks are meant for prediction but network information can be used to infer causation}
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{center}
+\animategraphics[controls, width =.65\linewidth]{12}{fig/Rplot}{}{} %frame rate is 12 per/sec
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{center}
+\animategraphics[controls,width=0.85\linewidth]{12}{fig/train_iter}{}{}
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+Modification of Garson's algorithm to determine relative importance of variables \cite{Garson91}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics<1->[width=\textwidth,page=2]{fig/Beck_GEDsem-nnet_relimp1.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics<1>[width=\textwidth,page=11]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<2>[width=\textwidth,page=12]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<3>[width=\textwidth,page=13]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<4>[width=\textwidth,page=14]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<5>[width=\textwidth,page=15]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<6>[width=\textwidth,page=16]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<7>[width=\textwidth,page=17]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<8>[width=\textwidth,page=18]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<9>[width=\textwidth,page=19]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\includegraphics<10->[width=\textwidth,page=20]{fig/Beck_GEDsem-nnet_relimp2.pdf}
+\end{center}
+\end{column}
+\end{columns}
+\onslide<11>
+Relative importance is summation of product of weights between layers
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\begin{center}
+\begin{figure}[p]
+\subfloat[IBI scores]{
+\includegraphics[width=0.5\textwidth,keepaspectratio=T,page=1]{fig/Beck_GEDsem-gar_exp_met.pdf}
+}
+\subfloat[MAXD metric]{
+\includegraphics[width=0.5\textwidth,keepaspectratio=T,page=2]{fig/Beck_GEDsem-gar_exp_met.pdf}
+}
+\vspace{0.1in}
+\caption{Examples of relative importance of explanatory variables based on weights between layers in optimal neural networks.}  
+\end{figure}
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+\onslide<+->
+Neural networks are powerful enough to model noise in the data \\~\\
+The model may be specific to peculiarities the training dataset \\~\\
+Uncertainty of variable importance must be quantified - bootstrap! 
+\onslide<+->
+\begin{center}
+\begin{figure}[t]
+\subfloat{
+\includegraphics[width=0.5\textwidth,keepaspectratio=T,page=1]{fig/Beck_GEDsem-gar_boot.pdf}
+}
+\subfloat{
+\includegraphics[width=0.5\textwidth,keepaspectratio=T,page=2]{fig/Beck_GEDsem-gar_boot.pdf}
+}
+\end{figure} %TAXA
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+Lots of uncertainty associated with input contributions... \\~\\
+\begin{itemize}
+\item One of ten relationships for IBI scores with explanatory variables
+\item Four of 80 relationships for metrics with explanatory variables
+\pause
+\item IBI negatively related to lake trophic state
+\item MAXD, OVER, and TAXA negatively related to lake trophic state
+\item TAXA positively related to lake size\\~\\
+\end{itemize}
+\pause
+What is the source of this uncertainty? Sample sizes, method, neural network?
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
+Potentially competing objectives of an IBI: certainty vs simplicity \\~\\
+\pause
+\begin{quote}
+IBI relies on multiparameters, a requirement when the system to be evaluated is complex. \cite{Karr86} \\~\\
+\end{quote}
+\begin{quote}
+The resulting index allows people without specialized expertise to understand overall condition and to make informed decisions that will then affect the health of those resources. \cite{Karr99} \\~\\
+\end{quote}
+\pause
+\begin{quote}
+Combining responses into an index hides the component responses, thereby obscuring causation. \cite{Suter93}
+\end{quote}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 USEPA Gulf Ecology Division - guidance to Florida DEP and others on criteria development for estuaries \\~\\
 \centerline{\includegraphics[width = 0.8\textwidth]{fig/sabine.png}}
 \end{frame}
 
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\onslide<+->
-There are challenges to providing guidance...\\~\\
-\alert{Challenge 1:} We don't fully understand eutrophication processes \\~\\
-\begin{quote}
-There are good reasons to believe that eutrophication will, in the near \alert{future}, become a \alert{hazard in marine coastal areas} in many parts of the world.\\~\\
-\vspace{0.05in}
-\hfill -- \cite{Rosenberg85} \\~\\
-\end{quote}
-\end{frame}
-
-%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\onslide<+->
-Our conceptual model for understanding the effects of nutrient pollution is adopted from freshwater sciences. \\~\\
-\begin{center}
-\scalebox{1}{
-\begin{tikzpicture}[node distance = 4cm, auto, >=stealth]
-  \node[block] (a) {Nutrient Loading};
-	\node[decision] (b)  [right of=a] {Responses};
- 	\draw[->] (a) -- (b);
-  \draw[decorate,decoration={brace,amplitude=10pt}] [right of=b] (2,-1.5) -- (2,1.5);
-  \node[draw,align=left,draw=none] [right of=b] {\textbf{Changes in:}\\ Chlorophyll\\ Primary Production\\ System Metabolism\\ Dissolved Oxygen};
-\end{tikzpicture}}
-\end{center}
-\vspace{-0.5cm}\hspace*{15pt}\scalebox{0.7}{\hbox{\tiny Adapted from \cite{Cloern01}}}\\~\\
-\end{frame}
-
-
-
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-Spatial and temporal variation in chlorophyll for Tampa Bay\\~\\
-\begin{columns}
-\begin{column}{0.53\textwidth}
-\begin{center}
-\includegraphics<1>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_1.pdf}
-\includegraphics<2>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_2.pdf}
-\includegraphics<3>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_3.pdf}
-\includegraphics<4>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_4.pdf}
-\includegraphics<5>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_5.pdf}
-\end{center}
-\end{column}
-\begin{column}{0.43\textwidth}
-\begin{center}
-\includegraphics<1>[width=\textwidth]{fig/wbid_map_1.pdf}
-\includegraphics<2>[width=\textwidth]{fig/wbid_map_2.pdf}
-\includegraphics<3>[width=\textwidth]{fig/wbid_map_3.pdf}
-\includegraphics<4>[width=\textwidth]{fig/wbid_map_4.pdf}
-\includegraphics<5>[width=\textwidth]{fig/wbid_map_5.pdf}
-\end{center}
-\end{column}
-\end{columns}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\onslide<+->
-\alert{Challenge 2:} We have the data but often lack tools to unambiguously and quantitatively characterize\\~\\
-\onslide<+->
-\vspace{0.2in}
-\begin{quote}
-Data without models are chaos, but models without data are fantasy. \\~\\
-\vspace{0.05in}
-\hspace{0.1in}-- NWQMC 2014 plenary, R. Hirsch via \cite{Nisbet14}
-\end{quote}
-\end{frame}
-
-%%%%%%
-\begin{frame}[shrink]{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-System Wide Monitoring Program, initiated in 1995 to provide continuous data at over 300 stations in 28 US estuaries \\~\\
-\centerline{\includegraphics[width = 0.8\textwidth]{fig/NERRS_locations.png}}
-\tiny
-\flushright
-\href{http://nerrs.noaa.gov/ReservesMap.aspx}{http://nerrs.noaa.gov/ReservesMap.aspx}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\onslide<+->
-SWMP - As of this month, over 56 million records\\~\\
-\begin{itemize}
-\item Weather $>$ 13 million
-\item Water quality $>$ 43 million
-\item Nutrients $>$ 93 thousand \\~\\
-\end{itemize}
-\onslide<+->
-Despite the quantity and quality of the data, very few comparative analyses. Exceptions... \\~\\
-\begin{itemize}
-\item Comparison of net metabolism \cite{Caffrey03}, \cite{Caffrey04}
-\item DO variation between estuaries \cite{Wenner04}
-\item Synthesis reports \cite{Wenner01}, \cite{Sanger02}
-\end{itemize}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\onslide<+->
-Guidance may come in many forms - not just a number \\~\\
-\onslide<+->
-\alert{Case 1:} Chlorophyll drivers in Tampa Bay\\~\\
-\onslide<+->
-\alert{Case 2:} Improving our understanding of seagrass growth and water quality\\~\\
-\onslide<+->
-\alert{Case 3:} `Open-science' tools for analysis of water quality\\~\\
-\onslide<+->
-Each provides an example of addressing the dual challenges of \alert{understanding nutrient dynamics} and \alert{developing quantitative tools} for trend evaluation 
-\end{frame}
-
-\section{Case 1: Tampa Bay}
+\section{Case 2: Florida Estuaries}
 
 % tampa bay map, w/ inset
 
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{itemize}
@@ -337,7 +501,7 @@ Each provides an example of addressing the dual challenges of \alert{understandi
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 \begin{figure}[!ht]
 
 {\centering \includegraphics[width=\linewidth]{fig/annual_chl-1} 
@@ -353,7 +517,7 @@ Each provides an example of addressing the dual challenges of \alert{understandi
 % variation in chl by year, season, and management
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 What affects our interpretation of chlorophyll response to nutrients?
 \vspace{-0.1in}
 \captionsetup[subfloat]{captionskip=0pt, position=top}
@@ -373,21 +537,21 @@ What affects our interpretation of chlorophyll response to nutrients?
     {\color{black} Chlorophyll-\textit{a}}}}}
     \hspace{0pt plus 1filll}\null
 
-\caption{Variation in chlorophyll by {\color{zissou5}\protect\subref{fig:salmoyr1}} time and {\color{zissou5}\protect\subref{fig:salmoyr2}} salinity and management in Hillsborough Bay.  Panel {\color{zissou5}\protect\subref{fig:salmoyr1}} is colored before and after wastewater treatment in 1979.}
+\caption{Variation in chlorophyll by {\color{mypal5}\protect\subref{fig:salmoyr1}} time and {\color{mypal5}\protect\subref{fig:salmoyr2}} salinity and management in Hillsborough Bay.  Panel {\color{mypal5}\protect\subref{fig:salmoyr1}} is colored before and after wastewater treatment in 1979.}
 \label{fig:salmoyr}
 \end{figure}
 \captionsetup[subfloat]{position=top}
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 \onslide<+->
 \begin{block}{Study objective}
-Adapt and apply nutrient response model for estuaries that leverages the descriptive capabilities of large datasets \scriptsize [Beck and Hagy, in review]
+Adapt and apply nutrient response model for estuaries that leverages the descriptive capabilities of large datasets \scriptsize \cite{Beck15}
 \end{block}
 \vspace{0.2in}
 \onslide<+->
-Questions of management concern -- Can we...
+Questions of concern -- Can we...
 \begin{itemize}
 \item ...provide a natural history of water quality that is temporally consistent with drivers of change?
 \onslide<+->
@@ -398,22 +562,22 @@ Questions of management concern -- Can we...
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 \onslide<+->
-The \alert{weighted regression (WRTDS)} model is being developed by USGS for pollutant modelling in rivers \cite{Hirsch10}\\~\\
-Based on the idea that pollution concentration is a function of \alert{time}, \alert{discharge}, and \alert{season}\\~\\
+The \emtxt{weighted regression (WRTDS)} model is being developed by USGS for pollutant modelling in rivers \cite{Hirsch10}\\~\\
+Based on the idea that pollution concentration is a function of \emtxt{time}, \emtxt{discharge}, and \emtxt{season}\\~\\
 \onslide<+->
-\alert{Problem:} We want to see if management has an effect on reducing pollutant load over time, but pollutant load varies with discharge.\\~\\
+\emtxt{Problem:} We want to see if management has an effect on reducing pollutant load over time, but pollutant load varies with discharge.\\~\\
 \onslide<+->
-\alert{Solution:} Develop a model that accounts for changes in relationships between drivers of pollution over time.\\~\\
+\emtxt{Solution:} Develop a model that accounts for changes in relationships between drivers of pollution over time.\\~\\
 \onslide<+->
-\alert{Adaptation:} Can this approach be used to evaluate chlorophyll trends in Tampa Bay?
+\emtxt{Adaptation:} Can this approach be used to evaluate chlorophyll trends in Tampa Bay?
 \end{frame}
 
 
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 How does weighted regression work?
 \begin{center}
 \animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
@@ -421,35 +585,38 @@ How does weighted regression work?
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 This gives us improved predictions of chlorophyll dynamics...
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=\linewidth]{fig//predvals-1} 
+{\centering \includegraphics[width=\linewidth]{fig/predvals-1} 
 
 }
 
-\caption[Predicted and observed monthly chlorophyll by segment]{Predicted and observed monthly chlorophyll by segment.}\label{fig:/predvals}
+\caption[Predicted and observed monthly chlorophyll by segment]{Predicted and observed monthly chlorophyll by segment.}\label{fig:predvals}
 \end{figure}
 
 
 \end{frame}
 
-pdf 
-  2 
-
-
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 Because the model is dynamic, we have parameters describing the relationship of chlorophyll with other factors specific to different time periods \\~\\
 \begin{columns}[T]
 \begin{column}{0.45\textwidth}
-\centerline{\includegraphics[width = \textwidth]{fig/hill.pdf}}
+
+
+{\centering \includegraphics[width=\maxwidth]{fig/hill-1} 
+
+}
+
+
+
 \end{column}
 \begin{column}{0.45\textwidth}
 \begin{itemize}
-\item Early period (blue) - point-sources
-\item Late period (red) - non-point sources
+\item Early period (light blue) - point-sources
+\item Late period (dark blue) - non-point sources
 \item Chlorophyll shows increasing response to freshwater input in recent years
 \end{itemize}
 \end{column}
@@ -457,7 +624,7 @@ Because the model is dynamic, we have parameters describing the relationship of 
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
 \onslide<+->
 What does this mean for Tampa Bay and elsewhere?\\~\\
 \begin{itemize}
@@ -469,13 +636,6 @@ The model parameters show us a picture...
 \centerline{\includegraphics[width = \textwidth]{fig/title_plo.pdf}}
 \end{frame}
 
-\section{Case 2: Seagrass and water quality}
-
-%%%%%%
-\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
-
-\end{frame}
-
 \section{Case 3: Open-source tools}
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
@@ -484,7 +644,7 @@ Progress in science is incremental and builds on past work\\~\\
 This requires accurate reproduction of methods\\~\\
 The ability to reproduce methods will always be a challenge...\\~\\
 \onslide<+->
-...digital tools have proliferated to \alert{facilitate sharing}\\~\\
+...digital tools have proliferated to \emtxt{facilitate sharing}\\~\\
 \begin{columns}
 \begin{column}{0.25\textwidth}
 \centerline{\includegraphics[width = \textwidth]{fig/Rlogo.png}}
@@ -503,7 +663,7 @@ The ability to reproduce methods will always be a challenge...\\~\\
 
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-Returning back to the System Wide Monitoring Program...\\~\\
+The NERRS System-Wide Monitoring Program...\\~\\
 \centerline{\includegraphics[width = 0.8\textwidth]{fig/NERRS_locations.png}}
 \end{frame}
 
@@ -513,8 +673,8 @@ Returning back to the System Wide Monitoring Program...\\~\\
 The SWMP database and others like it represent incredible opportunities to further our knowledge of natural systems...\\~\\
 ...including the effects of eutrophication \\~\\
 \onslide<+->
-\alert{Problem:} These data are numerous and not easily compared\\~\\
-\alert{Solution:} Develop open-source tools that address the challenges of large-scale comparative analyses with continuous monitoring data\\~\\
+\emtxt{Problem:} These data are numerous and not easily compared\\~\\
+\emtxt{Solution:} Develop open-source tools that address the challenges of large-scale comparative analyses with continuous monitoring data\\~\\
 \onslide<+->
 The benefits include:
 \begin{itemize}
@@ -525,71 +685,50 @@ The benefits include:
 \end{frame}
 
 %%%%%%
+\begin{frame}[t]{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+Each reserve has fixed, continuous monitoring stations for \emtxt{water quality} (15 min), \emtxt{meteorology} (15 min), and \emtxt{nutrients} (monthly)\\~\\
+As of this month, $>$ 60 million records available online\\~\\
+Raw data look like this:\\~\\
+\centerline{\includegraphics[width = 0.9\textwidth]{fig/qaqc_ex.png}}
+\end{frame}
+
+%%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\alert{SWMPr} is a freely available package for use with R \\~\\
-Designed to facilitate the analysis of SWMP data by providing functions that...\\~\\
+\centerline{\includegraphics[width = 0.8\textwidth]{fig/swmpr_logo.png}}
+\vspace{0.15in}
+\emtxt{SWMPr} is a freely available package for use with R \\~\\
 \begin{itemize}
-\item \alert{Retrieve} SWMP data for any site and date combination \\~\\ 
-\item \alert{Organize} the data using standard pre-processing techniques \\~\\
-\item \alert{Analyze} the data using a suite of exploratory and graphical analysis tools \\~\\
+\item \emtxt{Retrieve} SWMP data for any site and date combination
+\item \emtxt{Organize} the data using standard pre-processing techniques
+\item \emtxt{Analyze} the data using a suite of exploratory and graphical analysis tools
 \end{itemize}
 \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-What we've done so far... estimates of ecosystem metabolism 
+\href{https://swmprats.net}{SWMPrats.net}: \emtxt{S}ystem-\emtxt{W}ide \emtxt{M}onitoring \emtxt{P}rogram \emtxt{R}esources for the \emtxt{A}nalysis of \emtxt{T}ime \emtxt{S}eries \\~\\
+\centerline{\fbox{\includegraphics[width = 0.75\textwidth]{fig/swmprats_home.png}}}
+\end{frame}
 
-
-{\centering \includegraphics[width=\maxwidth]{fig//metab-1} 
-
-}
-
-
-
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+Two online applications can help visualize trends \\~\\
+\begin{columns}[t]
+\begin{column}{0.45\textwidth}
+\centerline{\emtxt{\href{https://beckmw.shinyapps.io/swmp_summary}{Summary plots}}}
+\centerline{\fbox{\includegraphics[width = 0.9\textwidth]{fig/swmp_summary.png}}}
+\end{column}
+\begin{column}{0.45\textwidth}
+\centerline{\emtxt{\href{https://beckmw.shinyapps.io/swmp_comp}{Trends map}}}
+\centerline{\fbox{\includegraphics[width = 0.935\textwidth]{fig/swmp_comp.png}}}
+\end{column}
+\end{columns}
 \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
 \onslide<+->
-What we've done so far... detiding dissolved oxygen data
-
-
-{\centering \includegraphics[width=0.9\textwidth]{fig/sapdo-1} 
-
-}
-
-
-
-\onslide<+->
-
-
-{\centering \includegraphics[width=0.9\textwidth]{fig/saptide-1} 
-
-}
-
-
-
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\vspace{-0.1in}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=\textwidth]{fig/dtd_met-1} 
-
-}
-
-
-
-\end{knitrout}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\onslide<+->
-Tools in the SWMPr package (or that will be included) have facilitated comparative analyses of millions of water quality records from NERRS \\~\\
+Tools in the SWMPr package have facilitated comparative analyses of millions of water quality records from NERRS \\~\\
 These tools can help improve our understanding of nutrient pollution and eutrophication \\~\\
 \onslide<+->
 Potential for many other applications... actively being developed \\~\\
@@ -609,46 +748,39 @@ Potential for many other applications... actively being developed \\~\\
 \end{columns}
 \end{frame}
 
-\section{Conclusions}
 %%%%%%
 \begin{frame}{\textbf{Conclusions}}
-The analysis of water quality will continue to require the use of novel tecniques to interpret the data \\~\\
+The analysis of water quality will continue to require the use of novel techniques to interpret the data \\~\\
 These needs are motivated by: \\~\\
 \begin{itemize}
 \item The continued relevance of stressors that influence ecosystem conditions \\~\\
 \item Our increasing ability to gather raw, uninterpreted data \\~\\
 \end{itemize}
-Our methods must be able to make sense of \alert{historical trends}, as well as predict \alert{future conditions}
+Our methods must be able to make sense of \emtxt{historical trends}, as well as predict \emtxt{future conditions}
 \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{Conclusions}}
-Our ability to \alert{share}, \alert{reproduce}, and \alert{collaborate} is essential \\~\\
-\alert{SWMPr package:} \href{https://github.com/fawda123/SWMPr}{https://github.com/fawda123/SWMPr} \\~\\
-\alert{Seagrass applications:} \href{https://beckmw.shinyapps.io/sg_depth}{https://beckmw.shinyapps.io/sg\_depth} \\~\\
-\alert{Ecosystem metabolism and detiding:} \href{http://spark.rstudio.com/beckmw/detiding_cases/}{http://spark.rstudio.com/beckmw/detiding\_cases/} \\~\\
-\alert{This presentation:} \href{https://github.com/fawda123/wqtrends_pres}{https://github.com/fawda123/wqtrends\_pres}
+Our ability to \emtxt{share}, \emtxt{reproduce}, and \emtxt{collaborate} is essential \\~\\
+\emtxt{SWMPr package:} \href{https://github.com/fawda123/SWMPr}{https://github.com/fawda123/SWMPr} \\~\\
+\emtxt{Summaries of SWMP parameters:} \href{https://beckmw.shinyapps.io/swmp_summary}{https://beckmw.shinyapps.io/swmp\_summary} \\~\\
+\emtxt{Trends in SWMP parameters:} \href{https://beckmw.shinyapps.io/swmp_comp}{https://beckmw.shinyapps.io/swmp\_comp} \\~\\
+\emtxt{This presentation:} \href{https://github.com/fawda123/ncea_pres}{https://github.com/fawda123/ncea\_pres} \\~\\
+\emtxt{Github}: \href{https://github.com/fawda123/}{github.com/fawda123/} \\~\\
+\emtxt{Blog}: \href{http://beckmw.wordpress.com/}{beckmw.wordpress.com/}
 \end{frame}
 
 %%%%%%
 \begin{frame}
 Acknowledgments:\\~\\
 \begin{columns}
-\begin{column}{0.6\textwidth}
+\begin{column}{0.8\textwidth}
 {\footnotesize
 Research staff and employees at USEPA Gulf Ecology Division - especially J. Hagy, M. Murrell\\~\\
 Field staff and data managers at Hillsborough County Environmental Protection Commission\\~\\
 Research coordinators, technicians, and field staff of the National Estuarine Research Reserve System}\\~\\
 \end{column}
-\begin{column}{0.3\textwidth}
-\vspace{-0.2in}
-\begin{center}
-{\tiny
-Wes Anderson Zissou color theme borrowed and adapted from \href{https://github.com/karthik/wesanderson}{github.com/karthik}\\~\\
-\includegraphics[width=0.55\linewidth]{fig/zissou.png}\\~\\
-\vspace{-0.15in}
-\scalebox{0.7}{\hbox{\tiny Image credit:\thinspace{\tiny \href{http://stephenmorrow.deviantart.com/}{Stephen Morrow}}}}}
-\end{center}
+\begin{column}{0.2\textwidth}
 \end{column}
 \end{columns}
 \vfill
@@ -660,9 +792,7 @@ Funding sources and contact:\\~\\
 \begin{column}{0.5\textwidth}
 \scriptsize
 \href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov} \\~\\
-Phone: 8509342480 \\~\\
-Github: \href{https://github.com/fawda123/}{github.com/fawda123/} \\~\\
-Blog: \href{http://beckmw.wordpress.com/}{beckmw.wordpress.com/}
+Phone: 8509342480
 \end{column}
 \end{columns}
 \vspace{0.2in}

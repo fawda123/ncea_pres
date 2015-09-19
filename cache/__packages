@@ -15,3 +15,5 @@ lattice
 survival
 Formula
 Hmisc
+car
+RColorBrewer
