@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.29)  20 SEP 2015 11:01
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.29)  20 SEP 2015 11:57
 entering extended mode
 **ncea_pres.tex
 (M:\presentations\ncea_pres\ncea_pres.tex
@@ -2878,41 +2878,34 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 762.
  [89
 
 ]
-File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 773.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
-
-[90
-
-] <fig/epa_logo.png, id=3216, 195.6108pt x 196.0926pt>
+<fig/epa_logo.png, id=3210, 195.6108pt x 196.0926pt>
 File: fig/epa_logo.png Graphic file (type png)
-
-<use fig/epa_logo.png>
-Package pdftex.def Info: fig/epa_logo.png used on input line 801.
+ <use fig/epa_logo.png>
+Package pdftex.def Info: fig/epa_logo.png used on input line 790.
 (pdftex.def)             Requested size: 68.45801pt x 68.62445pt.
-File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 801.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [91
-
- <M:/presentations/ncea_pres/fig/epa_logo.png>] (M:\presentations\ncea_pres\nce
-a_pres.bbl)
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 810.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 790.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [92
+ [90
+
+ <M:/presentations/ncea_pres/fig/epa_logo.png>]
+(M:\presentations\ncea_pres\ncea_pres.bbl)
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 799.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [91
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 810.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 799.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
-Package atenddvi Info: Last page = 93.
- [93
+Package atenddvi Info: Last page = 92.
+ [92
 
 
 ]
@@ -2924,11 +2917,11 @@ Package atenddvi Info: Last page = 93.
 Package caption Warning: Unused \captionsetup[subfloat] on input line 546.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 812.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 812.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 801.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 801.
 (M:\presentations\ncea_pres\ncea_pres.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 812.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 812.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 801.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 801.
 Package rerunfilecheck Info: File `ncea_pres.out' has not changed.
 (rerunfilecheck)             Checksum: 8F1EC1C3A7023FDDE99ED5D57ECE3FBD;273.
 
@@ -2936,13 +2929,13 @@ Package rerunfilecheck Info: File `ncea_pres.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 812.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 801.
  ) 
 Here is how much of TeX's memory you used:
- 30938 strings out of 493921
- 608974 string characters out of 3147282
- 691423 words of memory out of 3000000
- 33349 multiletter control sequences out of 15000+200000
+ 30934 strings out of 493921
+ 608937 string characters out of 3147282
+ 691375 words of memory out of 3000000
+ 33347 multiletter control sequences out of 15000+200000
  11624 words of font info for 44 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  49i,16n,73p,471b,905s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2963,9 +2956,9 @@ cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on ncea_pres.pdf (93 pages, 33503131 bytes).
+Output written on ncea_pres.pdf (92 pages, 33501100 bytes).
 PDF statistics:
- 3327 PDF objects out of 3580 (max. 8388607)
- 211 named destinations out of 1000 (max. 500000)
+ 3320 PDF objects out of 3580 (max. 8388607)
+ 209 named destinations out of 1000 (max. 500000)
  7871 words of extra memory for PDF output out of 10000 (max. 10000000)
 

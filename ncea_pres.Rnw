@@ -1085,17 +1085,6 @@ Potential for many other applications... actively being developed \\~\\
 
 %%%%%%
 \begin{frame}{\textbf{Conclusions}}
-The analysis of water quality will continue to require the use of novel techniques to interpret the data \\~\\
-These needs are motivated by: \\~\\
-\begin{itemize}
-\item The continued relevance of stressors that influence ecosystem conditions \\~\\
-\item Our increasing ability to gather raw, uninterpreted data \\~\\
-\end{itemize}
-Our methods must be able to make sense of \emtxt{historical trends}, as well as predict \emtxt{future conditions}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Conclusions}}
 Our ability to \emtxt{share}, \emtxt{reproduce}, and \emtxt{collaborate} is essential \\~\\
 \emtxt{SWMPr package:} \href{https://github.com/fawda123/SWMPr}{https://github.com/fawda123/SWMPr} \\~\\
 \emtxt{Summaries of SWMP parameters:} \href{https://beckmw.shinyapps.io/swmp_summary}{https://beckmw.shinyapps.io/swmp\_summary} \\~\\
