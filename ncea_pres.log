@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.29)  19 SEP 2015 17:15
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.29)  20 SEP 2015 11:01
 entering extended mode
 **ncea_pres.tex
 (M:\presentations\ncea_pres\ncea_pres.tex
@@ -1498,339 +1498,351 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 129.
 File: fig/theo-1.pdf Graphic file (type pdf)
 
 <use fig/theo-1.pdf>
-Package pdftex.def Info: fig/theo-1.pdf used on input line 143.
+Package pdftex.def Info: fig/theo-1.pdf used on input line 145.
 (pdftex.def)             Requested size: 188.26346pt x 122.36995pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 143.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 145.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [3
 
  <M:/presentations/ncea_pres/fig/theo-1.pdf>]
+File: fig/theo-1.pdf Graphic file (type pdf)
+ <use fig/theo-1.pdf>
+Package pdftex.def Info: fig/theo-1.pdf used on input line 145.
+(pdftex.def)             Requested size: 188.26346pt x 122.36995pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 167.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 145.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [4
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 167.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 169.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [5
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 167.
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 169.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [6
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 167.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 169.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [7
+
+[7
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 180.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 169.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
-
-[8
+ [8
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 180.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 182.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [9
+
+]
+File: fig/back_tmp.pdf Graphic file (type pdf)
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 182.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [10
 
 ]
 
 pdfTeX warning: pdflatex.exe (file M:/presentations/ncea_pres/fig/mn_lake_inset
 .pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowe
 d
-<fig/mn_lake_inset.pdf, id=156, 686.565pt x 867.24pt>
+<fig/mn_lake_inset.pdf, id=162, 686.565pt x 867.24pt>
 File: fig/mn_lake_inset.pdf Graphic file (type pdf)
 
 <use fig/mn_lake_inset.pdf>
-Package pdftex.def Info: fig/mn_lake_inset.pdf used on input line 197.
+Package pdftex.def Info: fig/mn_lake_inset.pdf used on input line 199.
 (pdftex.def)             Requested size: 171.14764pt x 216.17429pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 197.
+LaTeX Font Info:    Try loading font information for U+msa on input line 199.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 197.
+LaTeX Font Info:    Try loading font information for U+msb on input line 199.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<fig/mn_seal.jpg, id=157, 155.24667pt x 157.92334pt>
+<fig/mn_seal.jpg, id=163, 155.24667pt x 157.92334pt>
 File: fig/mn_seal.jpg Graphic file (type jpg)
  <use fig/mn_seal.jpg>
-Package pdftex.def Info: fig/mn_seal.jpg used on input line 197.
+Package pdftex.def Info: fig/mn_seal.jpg used on input line 199.
 (pdftex.def)             Requested size: 85.57382pt x 87.05087pt.
 
-<fig/mn_lake.jpg, id=158, 803.0pt x 566.115pt>
+<fig/mn_lake.jpg, id=164, 803.0pt x 566.115pt>
 File: fig/mn_lake.jpg Graphic file (type jpg)
  <use fig/mn_lake.jpg>
-Package pdftex.def Info: fig/mn_lake.jpg used on input line 197.
+Package pdftex.def Info: fig/mn_lake.jpg used on input line 199.
 (pdftex.def)             Requested size: 154.03183pt x 108.59091pt.
 
-Overfull \vbox (3.30031pt too high) detected at line 197
+Overfull \vbox (3.30031pt too high) detected at line 199
  []
 
 File: fig/back_tmp.pdf Graphic file (type pdf)
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 197.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 199.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [10
+ [11
 
  <M:/presentations/ncea_pres/fig/mn_lake_inset.pdf> <M:/presentations/ncea_pres
 /fig/mn_seal.jpg> <M:/presentations/ncea_pres/fig/mn_lake.jpg>] <fig/stressors.
-pdf, id=180, 719.00645pt x 484.77599pt>
+pdf, id=186, 719.00645pt x 484.77599pt>
 File: fig/stressors.pdf Graphic file (type pdf)
 
 <use fig/stressors.pdf>
-Package pdftex.def Info: fig/stressors.pdf used on input line 202.
+Package pdftex.def Info: fig/stressors.pdf used on input line 204.
 (pdftex.def)             Requested size: 308.06367pt x 207.7025pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 202.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 204.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [11
+ [12
 
  <M:/presentations/ncea_pres/fig/stressors.pdf>]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 219.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [12
-
-]
-File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 219.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 221.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [13
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 237.
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 221.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [14
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 237.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 239.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [15
 
 ]
-<fig/Beck_GEDsem-ibi_tsi.pdf, id=251, 433.62pt x 433.62pt>
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 239.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [16
+
+]
+<fig/Beck_GEDsem-ibi_tsi.pdf, id=257, 433.62pt x 433.62pt>
 File: fig/Beck_GEDsem-ibi_tsi.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-ibi_tsi.pdf>
-Package pdftex.def Info: fig/Beck_GEDsem-ibi_tsi.pdf used on input line 257.
+Package pdftex.def Info: fig/Beck_GEDsem-ibi_tsi.pdf used on input line 259.
 (pdftex.def)             Requested size: 171.14764pt x 171.149pt.
 
-<fig/Beck_GEDsem-ibi_eff.pdf, id=252, 433.62pt x 433.62pt>
+<fig/Beck_GEDsem-ibi_eff.pdf, id=258, 433.62pt x 433.62pt>
 File: fig/Beck_GEDsem-ibi_eff.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-ibi_eff.pdf>
-Package pdftex.def Info: fig/Beck_GEDsem-ibi_eff.pdf used on input line 257.
+Package pdftex.def Info: fig/Beck_GEDsem-ibi_eff.pdf used on input line 259.
 (pdftex.def)             Requested size: 171.14764pt x 171.149pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 257.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 259.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [16
+ [17
 
  <M:/presentations/ncea_pres/fig/Beck_GEDsem-ibi_tsi.pdf> <M:/presentations/nce
 a_pres/fig/Beck_GEDsem-ibi_eff.pdf>]
 File: fig/Beck_GEDsem-ibi_tsi.pdf Graphic file (type pdf)
  <use fig/Beck_GEDsem-ibi_tsi.pdf>
-Package pdftex.def Info: fig/Beck_GEDsem-ibi_tsi.pdf used on input line 257.
+Package pdftex.def Info: fig/Beck_GEDsem-ibi_tsi.pdf used on input line 259.
 (pdftex.def)             Requested size: 171.14764pt x 171.149pt.
 File: fig/Beck_GEDsem-ibi_eff.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-ibi_eff.pdf>
-Package pdftex.def Info: fig/Beck_GEDsem-ibi_eff.pdf used on input line 257.
+Package pdftex.def Info: fig/Beck_GEDsem-ibi_eff.pdf used on input line 259.
 (pdftex.def)             Requested size: 171.14764pt x 171.149pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 257.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [17
-
-]
-File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 289.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 259.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [18
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 289.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 291.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [19
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 289.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 291.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
-
-[20
+ [20
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 289.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 291.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [21
+
+[21
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 289.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 291.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [22
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 289.
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 291.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [23
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 289.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 291.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [24
 
 ]
-<fig/ibi_comb-1.pdf, id=322, 469.755pt x 216.81pt>
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 291.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [25
+
+]
+<fig/ibi_comb-1.pdf, id=329, 469.755pt x 216.81pt>
 File: fig/ibi_comb-1.pdf Graphic file (type pdf)
  <use fig/ibi_comb-1.pdf>
-Package pdftex.def Info: fig/ibi_comb-1.pdf used on input line 305.
+Package pdftex.def Info: fig/ibi_comb-1.pdf used on input line 307.
 (pdftex.def)             Requested size: 342.2953pt x 157.98216pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 305.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 307.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [25
+ [26
 
  <M:/presentations/ncea_pres/fig/ibi_comb-1.pdf>]
 File: fig/ibi_comb-1.pdf Graphic file (type pdf)
 
 <use fig/ibi_comb-1.pdf>
-Package pdftex.def Info: fig/ibi_comb-1.pdf used on input line 305.
+Package pdftex.def Info: fig/ibi_comb-1.pdf used on input line 307.
 (pdftex.def)             Requested size: 342.2953pt x 157.98216pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 305.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 307.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [26
+ [27
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 321.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 323.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
 
-[27
+[28
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 321.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [28
-
-]
-File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 321.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 323.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [29
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 321.
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 323.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [30
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 321.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 323.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [31
 
 ]
-<fig/Beck_GEDsem-ibi_data.pdf, id=372, 433.62pt x 433.62pt>
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 323.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [32
+
+]
+<fig/Beck_GEDsem-ibi_data.pdf, id=378, 433.62pt x 433.62pt>
 File: fig/Beck_GEDsem-ibi_data.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-ibi_data.pdf>
-Package pdftex.def Info: fig/Beck_GEDsem-ibi_data.pdf used on input line 350.
+Package pdftex.def Info: fig/Beck_GEDsem-ibi_data.pdf used on input line 352.
 (pdftex.def)             Requested size: 171.14764pt x 171.149pt.
 
-Overfull \vbox (2.1367pt too high) detected at line 350
+Overfull \vbox (2.1367pt too high) detected at line 352
  []
 
 File: fig/back_tmp.pdf Graphic file (type pdf)
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 350.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 352.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [32
+ [33
 
  <M:/presentations/ncea_pres/fig/Beck_GEDsem-ibi_data.pdf>]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 365.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [33
-
-]
-File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 365.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 367.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [34
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 365.
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 367.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [35
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 365.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 367.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [36
+
+]
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 367.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [37
 
 ] <M:/presentations/ncea_pres/fig/Rplot.pdf> <1> <M:/presentations/ncea_pres/fi
 g/Rplot.pdf> <2> <M:/presentations/ncea_pres/fig/Rplot.pdf> <3> <M:/presentatio
@@ -1956,14 +1968,14 @@ ot.pdf> <194> <M:/presentations/ncea_pres/fig/Rplot.pdf> <195> <M:/presentation
 s/ncea_pres/fig/Rplot.pdf> <196> <M:/presentations/ncea_pres/fig/Rplot.pdf>
 <197> <M:/presentations/ncea_pres/fig/Rplot.pdf> <198> <M:/presentations/ncea_p
 res/fig/Rplot.pdf> <199>
-Overfull \vbox (4.37518pt too high) detected at line 372
+Overfull \vbox (4.37518pt too high) detected at line 374
  []
 
 File: fig/back_tmp.pdf Graphic file (type pdf)
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 372.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 374.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [37
+ [38
 
 ] <M:/presentations/ncea_pres/fig/train_iter.pdf>
 <1> <M:/presentations/ncea_pres/fig/train_iter.pdf> <2> <M:/presentations/ncea_
@@ -2035,30 +2047,30 @@ a_pres/fig/train_iter.pdf> <99> <M:/presentations/ncea_pres/fig/train_iter.pdf>
 <100>
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 379.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 381.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [38
+ [39
 
 ]
-<fig/Beck_GEDsem-nnet_relimp1.pdf, id=1979, page=2, 526.96875pt x 454.69875pt>
+<fig/Beck_GEDsem-nnet_relimp1.pdf, id=1985, page=2, 526.96875pt x 454.69875pt>
 File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
+line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 
-<fig/Beck_GEDsem-nnet_relimp2.pdf, id=1980, page=11, 526.96875pt x 454.69875pt>
+<fig/Beck_GEDsem-nnet_relimp2.pdf, id=1986, page=11, 526.96875pt x 454.69875pt>
 File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
 <use fig/Beck_GEDsem-nnet_relimp2.pdf, page 11>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page11 used on input
- line 407.
+ line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [39
+ [40
 
  <M:/presentations/ncea_pres/fig/Beck_GEDsem-nnet_relimp1.pdf> <M:/presentation
 s/ncea_pres/fig/Beck_GEDsem-nnet_relimp2.pdf>]
@@ -2066,38 +2078,18 @@ File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
+line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 
-<fig/Beck_GEDsem-nnet_relimp2.pdf, id=1999, page=12, 526.96875pt x 454.69875pt>
+<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2005, page=12, 526.96875pt x 454.69875pt>
 File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
 <use fig/Beck_GEDsem-nnet_relimp2.pdf, page 12>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page12 used on input
- line 407.
+ line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [40
-
- <M:/presentations/ncea_pres/fig/Beck_GEDsem-nnet_relimp2.pdf>]
-File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
-
-<use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
-Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
-(pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
-
-<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2012, page=13, 526.96875pt x 454.69875pt>
-File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
-<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 13>
-Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page13 used on input
- line 407.
-(pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
-File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [41
 
@@ -2106,18 +2098,18 @@ File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
+line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 
-<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2025, page=14, 526.96875pt x 454.69875pt>
+<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2018, page=13, 526.96875pt x 454.69875pt>
 File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
-<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 14>
-Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page14 used on input
- line 407.
+<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 13>
+Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page13 used on input
+ line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [42
 
@@ -2126,18 +2118,18 @@ File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
+line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 
-<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2038, page=15, 526.96875pt x 454.69875pt>
+<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2031, page=14, 526.96875pt x 454.69875pt>
 File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
-<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 15>
-Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page15 used on input
- line 407.
+<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 14>
+Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page14 used on input
+ line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [43
 
@@ -2146,18 +2138,18 @@ File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
+line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 
-<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2052, page=16, 526.96875pt x 454.69875pt>
+<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2045, page=15, 526.96875pt x 454.69875pt>
 File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
-<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 16>
-Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page16 used on input
- line 407.
+<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 15>
+Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page15 used on input
+ line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [44
 
@@ -2166,18 +2158,18 @@ File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
+line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 
-<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2065, page=17, 526.96875pt x 454.69875pt>
+<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2058, page=16, 526.96875pt x 454.69875pt>
 File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
-<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 17>
-Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page17 used on input
- line 407.
+<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 16>
+Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page16 used on input
+ line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [45
 
@@ -2186,18 +2178,18 @@ File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
+line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 
-<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2078, page=18, 526.96875pt x 454.69875pt>
+<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2071, page=17, 526.96875pt x 454.69875pt>
 File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
-<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 18>
-Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page18 used on input
- line 407.
+<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 17>
+Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page17 used on input
+ line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [46
 
@@ -2206,18 +2198,18 @@ File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
+line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 
-<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2091, page=19, 526.96875pt x 454.69875pt>
+<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2084, page=18, 526.96875pt x 454.69875pt>
 File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
-<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 19>
-Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page19 used on input
- line 407.
+<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 18>
+Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page18 used on input
+ line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [47
 
@@ -2226,18 +2218,18 @@ File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
+line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 
-<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2104, page=20, 526.96875pt x 454.69875pt>
+<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2097, page=19, 526.96875pt x 454.69875pt>
 File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
-<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 20>
-Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page20 used on input
- line 407.
+<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 19>
+Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page19 used on input
+ line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [48
 
@@ -2246,78 +2238,98 @@ File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
-line 407.
+line 409.
+(pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
+
+<fig/Beck_GEDsem-nnet_relimp2.pdf, id=2110, page=20, 526.96875pt x 454.69875pt>
+File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
+<use fig/Beck_GEDsem-nnet_relimp2.pdf, page 20>
+Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page20 used on input
+ line 409.
+(pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [49
+
+ <M:/presentations/ncea_pres/fig/Beck_GEDsem-nnet_relimp2.pdf>]
+File: fig/Beck_GEDsem-nnet_relimp1.pdf Graphic file (type pdf)
+
+<use fig/Beck_GEDsem-nnet_relimp1.pdf, page 2>
+Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp1.pdf, page2 used on input 
+line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/Beck_GEDsem-nnet_relimp2.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-nnet_relimp2.pdf, page 20>
 Package pdftex.def Info: fig/Beck_GEDsem-nnet_relimp2.pdf, page20 used on input
- line 407.
+ line 409.
 (pdftex.def)             Requested size: 171.14764pt x 147.6782pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 407.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 409.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [49
+ [50
 
 ]
-<fig/Beck_GEDsem-gar_exp_met.pdf, id=2124, page=1, 361.35pt x 252.945pt>
+<fig/Beck_GEDsem-gar_exp_met.pdf, id=2130, page=1, 361.35pt x 252.945pt>
 File: fig/Beck_GEDsem-gar_exp_met.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-gar_exp_met.pdf, page 1>
 Package pdftex.def Info: fig/Beck_GEDsem-gar_exp_met.pdf, page1 used on input l
-ine 423.
+ine 425.
 (pdftex.def)             Requested size: 171.14764pt x 119.80275pt.
 
-<fig/Beck_GEDsem-gar_exp_met.pdf, id=2125, page=2, 361.35pt x 252.945pt>
+<fig/Beck_GEDsem-gar_exp_met.pdf, id=2131, page=2, 361.35pt x 252.945pt>
 File: fig/Beck_GEDsem-gar_exp_met.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-gar_exp_met.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-gar_exp_met.pdf, page2 used on input l
-ine 423.
+ine 425.
 (pdftex.def)             Requested size: 171.14764pt x 119.80275pt.
 
-Overfull \hbox (7.29997pt too wide) in paragraph at lines 423--423
+Overfull \hbox (7.29997pt too wide) in paragraph at lines 425--425
  [][] 
  []
 
 File: fig/back_tmp.pdf Graphic file (type pdf)
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 423.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 425.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [50
+ [51
 
  <M:/presentations/ncea_pres/fig/Beck_GEDsem-gar_exp_met.pdf> <M:/presentations
 /ncea_pres/fig/Beck_GEDsem-gar_exp_met.pdf>]
-<fig/Beck_GEDsem-gar_boot.pdf, id=2138, page=1, 361.35pt x 252.945pt>
+<fig/Beck_GEDsem-gar_boot.pdf, id=2144, page=1, 361.35pt x 252.945pt>
 File: fig/Beck_GEDsem-gar_boot.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-gar_boot.pdf, page 1>
 Package pdftex.def Info: fig/Beck_GEDsem-gar_boot.pdf, page1 used on input line
- 442.
+ 444.
 (pdftex.def)             Requested size: 171.14764pt x 119.80275pt.
 
-<fig/Beck_GEDsem-gar_boot.pdf, id=2139, page=2, 361.35pt x 252.945pt>
+<fig/Beck_GEDsem-gar_boot.pdf, id=2145, page=2, 361.35pt x 252.945pt>
 File: fig/Beck_GEDsem-gar_boot.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-gar_boot.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-gar_boot.pdf, page2 used on input line
- 442.
+ 444.
 (pdftex.def)             Requested size: 171.14764pt x 119.80275pt.
 
-Overfull \hbox (7.29997pt too wide) in paragraph at lines 442--442
+Overfull \hbox (7.29997pt too wide) in paragraph at lines 444--444
  [][] 
  []
 
 
-Overfull \vbox (2.4613pt too high) detected at line 442
+Overfull \vbox (2.4613pt too high) detected at line 444
  []
 
 File: fig/back_tmp.pdf Graphic file (type pdf)
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 442.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 444.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [51
+ [52
 
  <M:/presentations/ncea_pres/fig/Beck_GEDsem-gar_boot.pdf> <M:/presentations/nc
 ea_pres/fig/Beck_GEDsem-gar_boot.pdf>]
@@ -2325,199 +2337,199 @@ File: fig/Beck_GEDsem-gar_boot.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-gar_boot.pdf, page 1>
 Package pdftex.def Info: fig/Beck_GEDsem-gar_boot.pdf, page1 used on input line
- 442.
+ 444.
 (pdftex.def)             Requested size: 171.14764pt x 119.80275pt.
 File: fig/Beck_GEDsem-gar_boot.pdf Graphic file (type pdf)
 
 <use fig/Beck_GEDsem-gar_boot.pdf, page 2>
 Package pdftex.def Info: fig/Beck_GEDsem-gar_boot.pdf, page2 used on input line
- 442.
+ 444.
 (pdftex.def)             Requested size: 171.14764pt x 119.80275pt.
 
-Overfull \hbox (7.29997pt too wide) in paragraph at lines 442--442
+Overfull \hbox (7.29997pt too wide) in paragraph at lines 444--444
  [][] 
  []
 
 
-Overfull \vbox (2.4613pt too high) detected at line 442
+Overfull \vbox (2.4613pt too high) detected at line 444
  []
 
 File: fig/back_tmp.pdf Graphic file (type pdf)
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 442.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [52
-
-]
-File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 457.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 444.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [53
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 457.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 459.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
-
-[54
+ [54
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 457.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 459.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [55
+
+[55
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 473.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 459.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [56
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 473.
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 475.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [57
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 473.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 475.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [58
 
 ]
-<fig/sabine.png, id=2205, 1734.48pt x 1041.491pt>
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 475.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [59
+
+]
+<fig/sabine.png, id=2211, 1734.48pt x 1041.491pt>
 File: fig/sabine.png Graphic file (type png)
  <use fig/sabine.png>
-Package pdftex.def Info: fig/sabine.png used on input line 479.
+Package pdftex.def Info: fig/sabine.png used on input line 481.
 (pdftex.def)             Requested size: 273.83728pt x 164.4171pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 479.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 481.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [59
+ [60
 
  <M:/presentations/ncea_pres/fig/sabine.png>]
-<fig/tb_map.pdf, id=2215, 469.755pt x 469.755pt>
+<fig/tb_map.pdf, id=2221, 469.755pt x 469.755pt>
 File: fig/tb_map.pdf Graphic file (type pdf)
  <use fig/tb_map.pdf>
-Package pdftex.def Info: fig/tb_map.pdf used on input line 501.
+Package pdftex.def Info: fig/tb_map.pdf used on input line 503.
 (pdftex.def)             Requested size: 171.14764pt x 171.14734pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 501.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [60
-
- <M:/presentations/ncea_pres/fig/tb_map.pdf>]
-<fig/annual_chl-1.pdf, id=2232, 578.16pt x 325.215pt>
-File: fig/annual_chl-1.pdf Graphic file (type pdf)
-
-<use fig/annual_chl-1.pdf>
-Package pdftex.def Info: fig/annual_chl-1.pdf used on input line 515.
-(pdftex.def)             Requested size: 342.2953pt x 192.54015pt.
-
-Overfull \vbox (13.59866pt too high) detected at line 515
- []
-
-File: fig/back_tmp.pdf Graphic file (type pdf)
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 515.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 503.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [61
 
- <M:/presentations/ncea_pres/fig/annual_chl-1.pdf>]
-<fig/salmoyr.pdf, id=2252, page=1, 274.02374pt x 230.8625pt>
-File: fig/salmoyr.pdf Graphic file (type pdf)
+ <M:/presentations/ncea_pres/fig/tb_map.pdf>]
+<fig/annual_chl-1.pdf, id=2239, 578.16pt x 325.215pt>
+File: fig/annual_chl-1.pdf Graphic file (type pdf)
 
-<use fig/salmoyr.pdf, page 1>
-Package pdftex.def Info: fig/salmoyr.pdf, page1 used on input line 544.
-(pdftex.def)             Requested size: 157.45813pt x 124.70282pt.
+<use fig/annual_chl-1.pdf>
+Package pdftex.def Info: fig/annual_chl-1.pdf used on input line 517.
+(pdftex.def)             Requested size: 342.2953pt x 192.54015pt.
 
-<fig/salmoyr.pdf, id=2254, page=2, 274.02374pt x 230.8625pt>
-File: fig/salmoyr.pdf Graphic file (type pdf)
-
-<use fig/salmoyr.pdf, page 2>
-Package pdftex.def Info: fig/salmoyr.pdf, page2 used on input line 544.
-(pdftex.def)             Requested size: 157.45813pt x 124.70282pt.
-
-Overfull \vbox (0.26308pt too high) detected at line 544
+Overfull \vbox (13.59866pt too high) detected at line 517
  []
 
 File: fig/back_tmp.pdf Graphic file (type pdf)
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 544.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 517.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [62
+
+ <M:/presentations/ncea_pres/fig/annual_chl-1.pdf>]
+<fig/salmoyr.pdf, id=2258, page=1, 274.02374pt x 230.8625pt>
+File: fig/salmoyr.pdf Graphic file (type pdf)
+
+<use fig/salmoyr.pdf, page 1>
+Package pdftex.def Info: fig/salmoyr.pdf, page1 used on input line 546.
+(pdftex.def)             Requested size: 157.45813pt x 124.70282pt.
+
+<fig/salmoyr.pdf, id=2260, page=2, 274.02374pt x 230.8625pt>
+File: fig/salmoyr.pdf Graphic file (type pdf)
+
+<use fig/salmoyr.pdf, page 2>
+Package pdftex.def Info: fig/salmoyr.pdf, page2 used on input line 546.
+(pdftex.def)             Requested size: 157.45813pt x 124.70282pt.
+
+Overfull \vbox (0.26308pt too high) detected at line 546
+ []
+
+File: fig/back_tmp.pdf Graphic file (type pdf)
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 546.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [63
 
  <M:/presentations/ncea_pres/fig/salmoyr.pdf> <M:/presentations/ncea_pres/fig/s
 almoyr.pdf>]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 562.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [63
-
-]
-File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 562.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [64
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 562.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [65
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 562.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
-
-[66
+ [66
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 575.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [67
+
+[67
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 575.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 577.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [68
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 575.
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 577.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [69
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 575.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 577.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [70
+
+]
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 577.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [71
 
 ] <M:/presentations/ncea_pres/fig/wtex.pdf> <1> <M:/presentations/ncea_pres/fig
 /wtex.pdf> <2> <M:/presentations/ncea_pres/fig/wtex.pdf> <3> <M:/presentations/
@@ -2602,89 +2614,89 @@ cea_pres/fig/wtex.pdf> <131> <M:/presentations/ncea_pres/fig/wtex.pdf> <132>
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 585.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 587.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [71
+ [72
 
 ]
-<fig/predvals-1.pdf, id=3046, 614.295pt x 289.08pt>
+<fig/predvals-1.pdf, id=3052, 614.295pt x 289.08pt>
 File: fig/predvals-1.pdf Graphic file (type pdf)
  <use fig/predvals-1.pdf>
-Package pdftex.def Info: fig/predvals-1.pdf used on input line 600.
+Package pdftex.def Info: fig/predvals-1.pdf used on input line 602.
 (pdftex.def)             Requested size: 342.2953pt x 161.08089pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 600.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 602.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [72
+ [73
 
  <M:/presentations/ncea_pres/fig/predvals-1.pdf>]
-<fig/hill-1.pdf, id=3066, 289.08pt x 252.945pt>
+<fig/hill-1.pdf, id=3073, 289.08pt x 252.945pt>
 File: fig/hill-1.pdf Graphic file (type pdf)
  <use fig/hill-1.pdf>
-Package pdftex.def Info: fig/hill-1.pdf used on input line 624.
+Package pdftex.def Info: fig/hill-1.pdf used on input line 626.
 (pdftex.def)             Requested size: 154.03183pt x 134.77809pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 624.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 626.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [73
+ [74
 
  <M:/presentations/ncea_pres/fig/hill-1.pdf>]
 File: fig/title_plo.pdf Graphic file (type pdf)
 
 <use fig/title_plo.pdf>
-Package pdftex.def Info: fig/title_plo.pdf used on input line 637.
+Package pdftex.def Info: fig/title_plo.pdf used on input line 639.
 (pdftex.def)             Requested size: 342.2953pt x 99.83691pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 637.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 639.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [74
+ [75
 
 ]
 File: fig/title_plo.pdf Graphic file (type pdf)
  <use fig/title_plo.pdf>
-Package pdftex.def Info: fig/title_plo.pdf used on input line 637.
+Package pdftex.def Info: fig/title_plo.pdf used on input line 639.
 (pdftex.def)             Requested size: 342.2953pt x 99.83691pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 637.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 639.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [75
+ [76
 
-] <fig/Rlogo.png, id=3098, 87.2058pt x 66.2475pt>
+] <fig/Rlogo.png, id=3104, 87.2058pt x 66.2475pt>
 File: fig/Rlogo.png Graphic file (type png)
 
 <use fig/Rlogo.png>
-Package pdftex.def Info: fig/Rlogo.png used on input line 662.
+Package pdftex.def Info: fig/Rlogo.png used on input line 664.
 (pdftex.def)             Requested size: 85.57382pt x 65.00903pt.
- <fig/RStudio.png, id=3099, 2007.5pt x 704.6325pt>
+ <fig/RStudio.png, id=3105, 2007.5pt x 704.6325pt>
 File: fig/RStudio.png Graphic file (type png)
 
 <use fig/RStudio.png>
-Package pdftex.def Info: fig/RStudio.png used on input line 662.
+Package pdftex.def Info: fig/RStudio.png used on input line 664.
 (pdftex.def)             Requested size: 85.57382pt x 30.0298pt.
- <fig/knit-logo.png, id=3100, 240.9pt x 165.61874pt>
+ <fig/knit-logo.png, id=3106, 240.9pt x 165.61874pt>
 File: fig/knit-logo.png Graphic file (type png)
 
 <use fig/knit-logo.png>
-Package pdftex.def Info: fig/knit-logo.png used on input line 662.
+Package pdftex.def Info: fig/knit-logo.png used on input line 664.
 (pdftex.def)             Requested size: 85.57382pt x 58.8317pt.
- <fig/octocat.png, id=3101, 123.3408pt x 123.3408pt>
+ <fig/octocat.png, id=3107, 123.3408pt x 123.3408pt>
 File: fig/octocat.png Graphic file (type png)
 
 <use fig/octocat.png>
-Package pdftex.def Info: fig/octocat.png used on input line 662.
+Package pdftex.def Info: fig/octocat.png used on input line 664.
 (pdftex.def)             Requested size: 85.57382pt x 85.57573pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 662.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 664.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [76
+ [77
 
  <M:/presentations/ncea_pres/fig/Rlogo.png> <M:/presentations/ncea_pres/fig/RSt
 udio.png> <M:/presentations/ncea_pres/fig/knit-logo.png> <M:/presentations/ncea
@@ -2692,215 +2704,215 @@ _pres/fig/octocat.png>]
 File: fig/Rlogo.png Graphic file (type png)
 
 <use fig/Rlogo.png>
-Package pdftex.def Info: fig/Rlogo.png used on input line 662.
+Package pdftex.def Info: fig/Rlogo.png used on input line 664.
 (pdftex.def)             Requested size: 85.57382pt x 65.00903pt.
 File: fig/RStudio.png Graphic file (type png)
  <use fig/RStudio.png>
-Package pdftex.def Info: fig/RStudio.png used on input line 662.
+Package pdftex.def Info: fig/RStudio.png used on input line 664.
 (pdftex.def)             Requested size: 85.57382pt x 30.0298pt.
 File: fig/knit-logo.png Graphic file (type png)
  <use fig/knit-logo.png>
-Package pdftex.def Info: fig/knit-logo.png used on input line 662.
+Package pdftex.def Info: fig/knit-logo.png used on input line 664.
 (pdftex.def)             Requested size: 85.57382pt x 58.8317pt.
 File: fig/octocat.png Graphic file (type png)
 
 <use fig/octocat.png>
-Package pdftex.def Info: fig/octocat.png used on input line 662.
+Package pdftex.def Info: fig/octocat.png used on input line 664.
 (pdftex.def)             Requested size: 85.57382pt x 85.57573pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 662.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 664.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [77
+ [78
 
 ]
-<fig/NERRS_locations.png, id=3118, 725.71124pt x 446.41782pt>
+<fig/NERRS_locations.png, id=3124, 725.71124pt x 446.41782pt>
 File: fig/NERRS_locations.png Graphic file (type png)
 
 <use fig/NERRS_locations.png>
-Package pdftex.def Info: fig/NERRS_locations.png used on input line 668.
+Package pdftex.def Info: fig/NERRS_locations.png used on input line 670.
 (pdftex.def)             Requested size: 273.83728pt x 168.44847pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 668.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 670.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [78
+ [79
 
  <M:/presentations/ncea_pres/fig/NERRS_locations.png>]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 685.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [79
-
-]
-File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 685.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 687.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [80
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 685.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 687.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [81
 
 ]
-<fig/qaqc_ex.png, id=3144, 630.10406pt x 183.68625pt>
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 687.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [82
+
+]
+<fig/qaqc_ex.png, id=3150, 630.10406pt x 183.68625pt>
 File: fig/qaqc_ex.png Graphic file (type png)
  <use fig/qaqc_ex.png>
-Package pdftex.def Info: fig/qaqc_ex.png used on input line 693.
+Package pdftex.def Info: fig/qaqc_ex.png used on input line 695.
 (pdftex.def)             Requested size: 308.06367pt x 89.80522pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 693.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 695.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [82
+ [83
 
  <M:/presentations/ncea_pres/fig/qaqc_ex.png>]
-<fig/swmpr_logo.png, id=3152, 660.066pt x 209.583pt>
+<fig/swmpr_logo.png, id=3158, 660.066pt x 209.583pt>
 File: fig/swmpr_logo.png Graphic file (type png)
  <use fig/swmpr_logo.png>
-Package pdftex.def Info: fig/swmpr_logo.png used on input line 705.
+Package pdftex.def Info: fig/swmpr_logo.png used on input line 707.
 (pdftex.def)             Requested size: 273.83728pt x 86.94653pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 705.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [83
-
- <M:/presentations/ncea_pres/fig/swmpr_logo.png>]
-<fig/swmprats_home.png, id=3161, 719.68875pt x 442.65375pt>
-File: fig/swmprats_home.png Graphic file (type png)
-
-<use fig/swmprats_home.png>
-Package pdftex.def Info: fig/swmprats_home.png used on input line 711.
-(pdftex.def)             Requested size: 256.72147pt x 157.90303pt.
-File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 711.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 707.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [84
 
+ <M:/presentations/ncea_pres/fig/swmpr_logo.png>]
+<fig/swmprats_home.png, id=3167, 719.68875pt x 442.65375pt>
+File: fig/swmprats_home.png Graphic file (type png)
+
+<use fig/swmprats_home.png>
+Package pdftex.def Info: fig/swmprats_home.png used on input line 713.
+(pdftex.def)             Requested size: 256.72147pt x 157.90303pt.
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 713.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [85
+
  <M:/presentations/ncea_pres/fig/swmprats_home.png>]
-<fig/swmp_summary.png, id=3170, 938.75719pt x 697.10437pt>
+<fig/swmp_summary.png, id=3177, 938.75719pt x 697.10437pt>
 File: fig/swmp_summary.png Graphic file (type png)
 
 <use fig/swmp_summary.png>
-Package pdftex.def Info: fig/swmp_summary.png used on input line 726.
+Package pdftex.def Info: fig/swmp_summary.png used on input line 728.
 (pdftex.def)             Requested size: 138.6277pt x 102.93369pt.
 
-<fig/swmp_comp.png, id=3172, 941.76843pt x 672.26157pt>
+<fig/swmp_comp.png, id=3179, 941.76843pt x 672.26157pt>
 File: fig/swmp_comp.png Graphic file (type png)
 
 <use fig/swmp_comp.png>
-Package pdftex.def Info: fig/swmp_comp.png used on input line 726.
+Package pdftex.def Info: fig/swmp_comp.png used on input line 728.
 (pdftex.def)             Requested size: 144.01938pt x 102.80438pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 726.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 728.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [85
+ [86
 
  <M:/presentations/ncea_pres/fig/swmp_summary.png> <M:/presentations/ncea_pres/
 fig/swmp_comp.png>]
 File: fig/Rlogo.png Graphic file (type png)
 
 <use fig/Rlogo.png>
-Package pdftex.def Info: fig/Rlogo.png used on input line 749.
+Package pdftex.def Info: fig/Rlogo.png used on input line 751.
 (pdftex.def)             Requested size: 85.57382pt x 65.00903pt.
 File: fig/RStudio.png Graphic file (type png)
  <use fig/RStudio.png>
-Package pdftex.def Info: fig/RStudio.png used on input line 749.
+Package pdftex.def Info: fig/RStudio.png used on input line 751.
 (pdftex.def)             Requested size: 85.57382pt x 30.0298pt.
 File: fig/knit-logo.png Graphic file (type png)
  <use fig/knit-logo.png>
-Package pdftex.def Info: fig/knit-logo.png used on input line 749.
+Package pdftex.def Info: fig/knit-logo.png used on input line 751.
 (pdftex.def)             Requested size: 85.57382pt x 58.8317pt.
 File: fig/octocat.png Graphic file (type png)
 
 <use fig/octocat.png>
-Package pdftex.def Info: fig/octocat.png used on input line 749.
+Package pdftex.def Info: fig/octocat.png used on input line 751.
 (pdftex.def)             Requested size: 85.57382pt x 85.57573pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 749.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [86
-
-]
-File: fig/Rlogo.png Graphic file (type png)
- <use fig/Rlogo.png>
-Package pdftex.def Info: fig/Rlogo.png used on input line 749.
-(pdftex.def)             Requested size: 85.57382pt x 65.00903pt.
-File: fig/RStudio.png Graphic file (type png)
-
-<use fig/RStudio.png>
-Package pdftex.def Info: fig/RStudio.png used on input line 749.
-(pdftex.def)             Requested size: 85.57382pt x 30.0298pt.
-File: fig/knit-logo.png Graphic file (type png)
- <use fig/knit-logo.png>
-Package pdftex.def Info: fig/knit-logo.png used on input line 749.
-(pdftex.def)             Requested size: 85.57382pt x 58.8317pt.
-File: fig/octocat.png Graphic file (type png)
- <use fig/octocat.png>
-Package pdftex.def Info: fig/octocat.png used on input line 749.
-(pdftex.def)             Requested size: 85.57382pt x 85.57573pt.
-File: fig/back_tmp.pdf Graphic file (type pdf)
-
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 749.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 751.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [87
 
 ]
+File: fig/Rlogo.png Graphic file (type png)
+ <use fig/Rlogo.png>
+Package pdftex.def Info: fig/Rlogo.png used on input line 751.
+(pdftex.def)             Requested size: 85.57382pt x 65.00903pt.
+File: fig/RStudio.png Graphic file (type png)
+
+<use fig/RStudio.png>
+Package pdftex.def Info: fig/RStudio.png used on input line 751.
+(pdftex.def)             Requested size: 85.57382pt x 30.0298pt.
+File: fig/knit-logo.png Graphic file (type png)
+ <use fig/knit-logo.png>
+Package pdftex.def Info: fig/knit-logo.png used on input line 751.
+(pdftex.def)             Requested size: 85.57382pt x 58.8317pt.
+File: fig/octocat.png Graphic file (type png)
+ <use fig/octocat.png>
+Package pdftex.def Info: fig/octocat.png used on input line 751.
+(pdftex.def)             Requested size: 85.57382pt x 85.57573pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 760.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 751.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [88
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 771.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 762.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [89
+
+]
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 773.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
 
-[89
+[90
 
-] <fig/epa_logo.png, id=3210, 195.6108pt x 196.0926pt>
+] <fig/epa_logo.png, id=3216, 195.6108pt x 196.0926pt>
 File: fig/epa_logo.png Graphic file (type png)
 
 <use fig/epa_logo.png>
-Package pdftex.def Info: fig/epa_logo.png used on input line 799.
+Package pdftex.def Info: fig/epa_logo.png used on input line 801.
 (pdftex.def)             Requested size: 68.45801pt x 68.62445pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 799.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 801.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [90
+ [91
 
  <M:/presentations/ncea_pres/fig/epa_logo.png>] (M:\presentations\ncea_pres\nce
 a_pres.bbl)
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 808.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 810.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [91
+ [92
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 808.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 810.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
-Package atenddvi Info: Last page = 92.
- [92
+Package atenddvi Info: Last page = 93.
+ [93
 
 
 ]
@@ -2909,14 +2921,14 @@ Package atenddvi Info: Last page = 92.
 \tf@snm=\write8
 
 
-Package caption Warning: Unused \captionsetup[subfloat] on input line 544.
+Package caption Warning: Unused \captionsetup[subfloat] on input line 546.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 810.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 810.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 812.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 812.
 (M:\presentations\ncea_pres\ncea_pres.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 810.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 810.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 812.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 812.
 Package rerunfilecheck Info: File `ncea_pres.out' has not changed.
 (rerunfilecheck)             Checksum: 8F1EC1C3A7023FDDE99ED5D57ECE3FBD;273.
 
@@ -2924,12 +2936,12 @@ Package rerunfilecheck Info: File `ncea_pres.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 810.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 812.
  ) 
 Here is how much of TeX's memory you used:
- 30936 strings out of 493921
- 608952 string characters out of 3147282
- 692415 words of memory out of 3000000
+ 30938 strings out of 493921
+ 608974 string characters out of 3147282
+ 691423 words of memory out of 3000000
  33349 multiletter control sequences out of 15000+200000
  11624 words of font info for 44 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -2951,9 +2963,9 @@ cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on ncea_pres.pdf (92 pages, 33500970 bytes).
+Output written on ncea_pres.pdf (93 pages, 33503131 bytes).
 PDF statistics:
- 3320 PDF objects out of 3580 (max. 8388607)
- 209 named destinations out of 1000 (max. 500000)
+ 3327 PDF objects out of 3580 (max. 8388607)
+ 211 named destinations out of 1000 (max. 500000)
  7871 words of extra memory for PDF output out of 10000 (max. 10000000)
 
